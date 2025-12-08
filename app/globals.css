@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lovely_Bubbles';
+  src: url('/lovely_bubbles/Lovely Bubbles.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hero background with fixed attachment for desktop, scroll for mobile */
+  .hero-background {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Default to scroll for mobile */
+  }
+  
+  @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+    .hero-background {
+      background-attachment: fixed; /* Fixed only on desktop and if motion is allowed */
+    }
+  }
+}
+
