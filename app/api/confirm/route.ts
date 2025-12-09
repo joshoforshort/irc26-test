@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { confirmationSchema } from '@/lib/validation';
 import { createEditToken } from '@/lib/auth';
 import { sendMagicLink } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const validated = confirmationSchema.parse(body);
+    //const validated = confirmationSchema.parse(body);
 
     // Find or create user
     let user = await prisma.user.findUnique({

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { validateEditToken } from '@/lib/auth';
-import { editConfirmationSchema } from '@/lib/validation';
+
 
 export async function PUT(
   request: NextRequest,
@@ -28,7 +28,7 @@ export async function PUT(
     }
 
     const body = await request.json();
-    const validated = editConfirmationSchema.parse(body);
+    // const validated = editConfirmationSchema.parse(body);
 
     // Verify the confirmation belongs to the user
     const confirmation = await prisma.confirmation.findUnique({
