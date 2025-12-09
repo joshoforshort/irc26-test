@@ -49,6 +49,9 @@ export const updatePledgeSchema = pledgeSchema.partial().extend({
   images: z.array(imageSchema).max(3, 'Maximum 3 images allowed').optional(),
 });
 
+// Alias for backward compatibility (used by manage route)
+export const editPledgeSchema = updatePledgeSchema;
+
 // Update submission schema
 export const updateSubmissionSchema = submissionSchema.partial().extend({
   pledgeId: z.string().optional(),

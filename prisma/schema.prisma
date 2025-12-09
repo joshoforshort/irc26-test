@@ -13,12 +13,14 @@ datasource db {
 model User {
   id            String       @id @default(cuid())
   email         String       @unique
+  emailVerified DateTime?    // ← add this line
   gcUsername    String?
   createdAt     DateTime     @default(now())
   pledges       Pledge[]
   submissions   Submission[]
   accounts      Account[]
   sessions      Session[]
+  editTokens    EditToken[]
 }
 
 model Account {
@@ -54,6 +56,19 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model EditToken {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+  @@index([expiresAt])
 }
 
 enum CacheType {

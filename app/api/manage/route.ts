@@ -29,16 +29,8 @@ export async function GET(request: NextRequest) {
         pledges: {
           orderBy: { createdAt: 'desc' },
         },
-        confirmations: {
+        submissions: {
           orderBy: { createdAt: 'desc' },
-          include: {
-            pledge: {
-              select: {
-                id: true,
-                pledgedCount: true,
-              },
-            },
-          },
         },
       },
     });
@@ -53,11 +45,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       user: {
         id: user.id,
-        username: user.username,
+        gcUsername: user.gcUsername,
         email: user.email,
       },
       pledges: user.pledges,
-      confirmations: user.confirmations,
+      submissions: user.submissions,
       token, // Return token for use in subsequent requests
     });
   } catch (error) {

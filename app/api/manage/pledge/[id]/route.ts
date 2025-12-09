@@ -46,13 +46,14 @@ export async function PUT(
     const updated = await prisma.pledge.update({
       where: { id: params.id },
       data: {
-        pledgedCount: validated.pledgedCount,
-        cacheTypes: validated.cacheTypes,
-        cacheSizes: validated.cacheSizes,
-        states: validated.states,
-        approxLocations: validated.approxLocations || [],
-        ideaNotes: validated.ideaNotes || null,
-        photoUrls: validated.photoUrls || [],
+        ...(validated.gcUsername && { gcUsername: validated.gcUsername }),
+        ...(validated.title !== undefined && { title: validated.title }),
+        ...(validated.cacheType && { cacheType: validated.cacheType }),
+        ...(validated.cacheSize && { cacheSize: validated.cacheSize }),
+        ...(validated.approxSuburb && { approxSuburb: validated.approxSuburb }),
+        ...(validated.approxState && { approxState: validated.approxState }),
+        ...(validated.conceptNotes !== undefined && { conceptNotes: validated.conceptNotes }),
+        ...(validated.images !== undefined && { images: validated.images }),
       },
     });
 

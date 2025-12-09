@@ -95,6 +95,47 @@ export async function sendSubmissionConfirmationEmail(email: string, submissionI
   }
 }
 
+export async function sendMagicLink(email: string, token: string): Promise<void> {
+  const manageUrl = `${appUrl}/manage?token=${token}`;
+
+  try {
+    await transporter.sendMail({
+      from: process.env.EMAIL_FROM || 'IRC26 <no-reply@irc26.example>',
+      to: email,
+      subject: 'Your IRC26 Magic Link',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #333;">Manage Your IRC26 Entries</h2>
+          <p>Click the link below to access and manage your pledges and submissions:</p>
+          <p style="margin: 20px 0;">
+            <a href="${manageUrl}" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
+              Manage My Entries
+            </a>
+          </p>
+          <p style="color: #666; font-size: 12px;">
+            This link will expire in 7 days. If the button doesn't work, copy and paste this link into your browser:<br>
+            ${manageUrl}
+          </p>
+          <p style="color: #999; font-size: 11px; margin-top: 20px;">
+            If you didn't request this link, you can safely ignore this email.
+          </p>
+        </div>
+      `,
+      text: `Manage Your IRC26 Entries\n\nClick this link to access and manage your pledges and submissions:\n${manageUrl}\n\nThis link will expire in 7 days.`,
+    });
+  } catch (error) {
+    console.error('Error sending magic link email:', error);
+    // Don't throw - email failures shouldn't break the flow
+    // Log to console as fallback
+    console.log('='.repeat(60));
+    console.log('EMAIL: Magic Link (failed to send, logged instead)');
+    console.log('To:', email);
+    console.log('Subject: Your IRC26 Magic Link');
+    console.log(`Manage URL: ${manageUrl}`);
+    console.log('='.repeat(60));
+  }
+}
+
 
 
 
