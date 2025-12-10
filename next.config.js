@@ -2,8 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['uploadthing.com', 'utfs.io'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'uploadthing.com' },
+      { protocol: 'https', hostname: 'utfs.io' },
+    ],
   },
+  allowedDevOrigins: [
+    'https://*.replit.dev',
+    'https://*.replit.app',
+    'https://*.kirk.replit.dev',
+  ],
 }
 
 module.exports = nextConfig
