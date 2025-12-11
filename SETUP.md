@@ -11,12 +11,12 @@ npm install
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-DATABASE_URL="postgresql://user:RAINMAKER2@localhost:5432/irc26?schema=public"
-NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="speufhsoyg87q3ry4w-97g-8fsg7w08346gfw"
-ADMIN_EMAIL="ozbuckeyegc@gmail.com"
-ADMIN_PASSWORD="RAINMAKER2"
-APP_URL="http://localhost:3000"
+DATABASE_URL
+NEXTAUTH_URL
+NEXTAUTH_SECRET
+ADMIN_EMAIL
+ADMIN_PASSWORD
+APP_URL
 ```
 
 ## 3. Set Up Database
