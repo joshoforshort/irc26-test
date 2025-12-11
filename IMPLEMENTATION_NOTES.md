@@ -58,22 +58,22 @@
 Add to `.env`:
 ```env
 # NextAuth
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-secret-key-here
+NEXTAUTH_URL
+NEXTAUTH_SECRET
 
 # Email (for magic links)
-EMAIL_SERVER_HOST=smtp.example.com
-EMAIL_SERVER_PORT=587
-EMAIL_SERVER_USER=your-email@example.com
-EMAIL_SERVER_PASSWORD=your-password
-EMAIL_FROM="IRC26 <no-reply@irc26.example>"
+EMAIL_SERVER_HOST
+EMAIL_SERVER_PORT
+EMAIL_SERVER_USER
+EMAIL_SERVER_PASSWORD
+EMAIL_FROM
 
 # Admin
-ADMIN_EMAIL=admin@example.com
+ADMIN_EMAIL
 
 # UploadThing
-UPLOADTHING_SECRET=your-uploadthing-secret
-UPLOADTHING_APP_ID=your-uploadthing-app-id
+UPLOADTHING_SECRET
+UPLOADTHING_APP_ID
 ```
 
 ### 2. Database Migration
