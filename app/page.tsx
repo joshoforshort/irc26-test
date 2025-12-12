@@ -293,7 +293,7 @@ export default function Home() {
 
                     <div className="mt-5">
                       <p className="text-[16px] leading-[1.25rem] text-center">
-                        <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> Submit your caches for publication and <a href="/confirm" className="text-[#69bc45] hover:underline">convert your Pledge to confirm it as an IRC26 hide.</a>
+                        <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> Submit your caches for publication and <a href="/confirm" className="text-[#69bc45] hover:underline">convert your Pledge to confirm it as an IRC26 hide.</a> Watch Our Stats grow!
                       </p>
                     </div>
                   </div>
