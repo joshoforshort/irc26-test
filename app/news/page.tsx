@@ -51,7 +51,7 @@ export default function News() {
                 <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-2 text-center">
                   WELCOME TO IRC26!
                 </h2>
-                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                <p className="leading-tight mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                   We're excited to announce the launch of It's Raining Caches 2026! After the incredible success of IRC25, we're back and ready to make it rain even more caches across Australia. Stay tuned for updates as we build towards February 14, 2026.
                 </p>
               </div>
