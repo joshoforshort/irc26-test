@@ -121,7 +121,7 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-center font-lovely text-2xl sm:text-3xl mt-6 mb-8">It's Raining Caches 2026</h2>
+            <h2 className="text-center font-lovely text-2xl sm:text-3xl mt-6 mb-12">It's Raining Caches 2026</h2>
             <h3 className="text-center font-lovely text-2xl sm:text-3xl leading-tight mb-2">
               <ClientDate date={RAIN_START_DATE} format="DDth MMMM YYYY" />
             </h3>
