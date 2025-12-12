@@ -17,6 +17,15 @@ interface Stats {
   byType: Record<string, number>;
 }
 
+type DateFormat = 'DD MMMM YYYY' | 'D MMMM YYYY' | 'DDth MMMM YYYY' | 'DD MMM YYYY' | 'DDth MMM YYYY' | 'HH[AM/PM] [TZ]' | 'hA [AEST]' | 'HH[AM/PM] DD MMM YYYY' | 'hA DD MMM YYYY' | 'hA DDth MMM YYYY' | 'DAYNAME';
+
+function ClientDate({ date, format }: { date: Date; format: DateFormat }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return <span>Loading...</span>;
+  return <>{formatDate(date, format)}</>;
+}
+
 function CountdownDisplay({ targetDate }: { targetDate: Date }) {
   const [timeLeft, setTimeLeft] = useState<{
     days: number;
@@ -114,10 +123,10 @@ export default function Home() {
             </div>
             <h2 className="text-center font-lovely text-2xl sm:text-3xl mt-6 mb-8">It's Raining Caches 2026</h2>
             <h3 className="text-center font-lovely text-2xl sm:text-3xl leading-tight mb-2">
-              {formatDate(RAIN_START_DATE, 'DDth MMMM YYYY')}
+              <ClientDate date={RAIN_START_DATE} format="DDth MMMM YYYY" />
             </h3>
             <p className="text-center font-lovely text-2xl sm:text-3xl leading-tight mb-8">
-              {formatDate(RAIN_START_DATE, 'hA [AEST]')}
+              <ClientDate date={RAIN_START_DATE} format="hA [AEST]" />
             </p>
             <h2 className="text-center font-lovely text-2xl sm:text-3xl mb-6">
               RAIN DOWN LOVE
@@ -167,8 +176,8 @@ export default function Home() {
               </p>
               <p className="mt-2 font-lovely font-bold text-center tracking-wide">
                 ALL IRC26 CACHES WILL BE PUBLISHED<br />
-                {formatDate(RAIN_START_DATE, 'DAYNAME')}{' '}
-                {formatDate(RAIN_START_DATE, 'DDth MMMM YYYY')} {formatDate(RAIN_START_DATE, 'HH[AM/PM] [TZ]')}.
+                <ClientDate date={RAIN_START_DATE} format="DAYNAME" />{' '}
+                <ClientDate date={RAIN_START_DATE} format="DDth MMMM YYYY" /> <ClientDate date={RAIN_START_DATE} format="HH[AM/PM] [TZ]" />.
               </p>
             </div>
 
@@ -209,7 +218,7 @@ export default function Home() {
                 SUBMISSIONS CLOSE
               </h3>
               <p className="mt-2 mb-6 font-lovely text-lg sm:text-xl">
-                {formatDate(SUBMISSION_DEADLINE, 'hA DDth MMM YYYY')}
+                <ClientDate date={SUBMISSION_DEADLINE} format="hA DDth MMM YYYY" />
               </p>
             </div>
           </div>
