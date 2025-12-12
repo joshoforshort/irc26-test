@@ -275,7 +275,7 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <div className="mt-6 space-y-1 text-center">
+                    <div className="mt-6 space-y-1 text-center border border-black p-4 rounded">
                       <p className="font-arial-rounded font-bold text-[16px] leading-6">
                         NSW / ACT / VIC / TAS: PUBLISH - 31 JAN 2026 at 9AM
                       </p>
