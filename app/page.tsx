@@ -170,7 +170,7 @@ export default function Home() {
               <h2 className="font-lovely tracking-[0.5px] text-2xl sm:text-3xl text-center mb-6">
                 THE CHALLENGE
               </h2>
-              <p className="mt-4 font-lovely font-bold text-center text-[13px] sm:text-[14px]">
+              <p className="mt-4 font-lovely font-bold text-center tracking-wide">
                 Collectively create, hide and publish<br />
                 500 x FP worthy caches across Australia.
               </p>
