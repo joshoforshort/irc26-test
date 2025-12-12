@@ -16,6 +16,9 @@ export default function Header() {
             IRC26
           </Link>
           <nav className="flex items-center gap-2 sm:gap-3">
+            <Link href="/news" className={linkStyles}>
+              News
+            </Link>
             <Link href="/pledge" className={linkStyles}>
               Pledge
             </Link>
