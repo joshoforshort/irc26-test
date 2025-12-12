@@ -13,7 +13,7 @@ export default function VerifyRequestPage() {
           <Card className="max-w-md">
             <div className="text-center space-y-4">
               <h1 className="font-lovely text-xl sm:text-2xl text-gray-900">Check Your Email</h1>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-xs">
                 We&apos;ve sent you a magic link and it will take a few minutes to appear in your inbox - thanks for your patience! Click the link in your email to sign in.
               </p>
               <p className="text-sm text-gray-500">
