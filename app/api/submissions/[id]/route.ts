@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { updateSubmissionSchema } from '@/lib/validation';
 import { isAdmin } from '@/lib/auth-config';
 import { verifyAdminSession } from '@/lib/admin-session';
+import { deleteUploadThingFiles } from '@/lib/uploadthing-utils';
 
 export async function GET(
   request: NextRequest,
@@ -140,6 +141,11 @@ export async function DELETE(
           before: existingSubmission as any,
         },
       });
+    }
+
+    // Delete images from UploadThing before deleting the submission
+    if (existingSubmission.images) {
+      await deleteUploadThingFiles(existingSubmission.images as any[]);
     }
 
     await prisma.$transaction([

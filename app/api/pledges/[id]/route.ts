@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { updatePledgeSchema } from '@/lib/validation';
 import { isAdmin } from '@/lib/auth-config';
 import { verifyAdminSession } from '@/lib/admin-session';
+import { deleteUploadThingFiles } from '@/lib/uploadthing-utils';
 
 export async function GET(
   request: NextRequest,
@@ -142,6 +143,19 @@ export async function DELETE(
           before: existingPledge as any,
         },
       });
+    }
+
+    // Delete images from UploadThing before deleting the pledge
+    if (existingPledge.images) {
+      await deleteUploadThingFiles(existingPledge.images as any[]);
+    }
+
+    // Also delete any associated submission images
+    const associatedSubmission = await prisma.submission.findFirst({
+      where: { pledgeId },
+    });
+    if (associatedSubmission?.images) {
+      await deleteUploadThingFiles(associatedSubmission.images as any[]);
     }
 
     await prisma.pledge.delete({
