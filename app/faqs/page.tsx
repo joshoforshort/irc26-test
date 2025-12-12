@@ -145,7 +145,7 @@ export default function FAQs() {
                     {/* IRC26 Banner */}
                     <div className="mt-5">
                       <p className="text-[16px] leading-[1.25rem] text-center">
-                        <span className="font-lovely text-base sm:text-lg" style={{ color: '#69bc45' }}>IRC26 BANNER:</span> You can include this at the bottom of your cache page. Download it here.
+                        <span className="font-lovely text-base sm:text-lg" style={{ color: '#69bc45' }}>IRC26 BANNER:</span> You can include this at the bottom of your cache page. <a href="/IRC26Banner.jpg" download className="text-[#69bc45] hover:underline">Download it here.</a>
                       </p>
                     </div>
 
