@@ -77,7 +77,7 @@ function SignInContent() {
                   disabled={loading}
                   className="w-full btn-primary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
                 >
-                  {loading ? 'Sending...' : 'Send Magic Link'}
+                  {loading ? 'Sending...' : "Let's go!"}
                 </button>
               </form>
             </div>
