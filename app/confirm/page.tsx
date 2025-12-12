@@ -172,7 +172,7 @@ export default function ConfirmPage() {
       <div className="text-center space-y-2">
         <h1 className="font-lovely text-3xl sm:text-4xl font-bold text-gray-900 uppercase">Confirm GC Code</h1>
         <p className="text-gray-600">
-          Link your published cache to one of your pledges.
+          Convert your pledge to an locked in IRC26 hide.
         </p>
       </div>
 
