@@ -216,6 +216,13 @@ export default function FAQs() {
                 </h2>
                 <p className="leading-tight mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Drop a message to beautifulsky13 via the GC message centre or <a href="mailto:beautifulsky13gc@gmail.com" className="text-[#69bc45] hover:underline">beautifulsky13gc@gmail.com</a>. She's happy to help answer any questions.</p>
               </div>
+
+              <div>
+                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                  WHO DESIGNED THIS NIFTY WEBSITE?
+                </h2>
+                <p className="leading-tight mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>beautifulsky13 made it look pretty, ozbuckeye made it work smart and joshoforshort made it live. They are 3 geocachers who live within a 3km radius of each other in Sydney, Australia.</p>
+              </div>
             </div>
           </div>
         </section>
