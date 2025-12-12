@@ -177,7 +177,7 @@ export default function PledgePage() {
       <div className="text-center space-y-2">
         <h1 className="font-lovely text-3xl sm:text-4xl font-bold text-gray-900">Pledge Your Cache</h1>
         <p className="text-gray-600">
-          Share your cache idea for IRC26. You can create multiple pledges.
+          Share your cache idea for IRC26. You can create multiple pledges and edit these at anytime.
         </p>
       </div>
 
