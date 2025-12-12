@@ -6,6 +6,8 @@ import { useSession } from 'next-auth/react';
 export default function Header() {
   const { data: session } = useSession();
 
+  const linkStyles = "px-3 py-2 text-sm sm:text-base font-medium rounded-full bg-white/20 hover:bg-white/30 active:bg-white/40 transition-all duration-150 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none";
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -13,22 +15,22 @@ export default function Header() {
           <Link href="/" className="text-lg sm:text-xl font-bold tracking-wide hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded">
             IRC26
           </Link>
-          <nav className="flex items-center gap-6">
-            <Link href="/pledge" className="text-sm sm:text-base font-medium hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded">
+          <nav className="flex items-center gap-2 sm:gap-3">
+            <Link href="/pledge" className={linkStyles}>
               Pledge
             </Link>
-            <Link href="/confirm" className="text-sm sm:text-base font-medium hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded">
+            <Link href="/confirm" className={linkStyles}>
               Confirm
             </Link>
-            <Link href="/faqs" className="text-sm sm:text-base font-medium hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded">
+            <Link href="/faqs" className={linkStyles}>
               FAQ
             </Link>
             {session?.user && (
-              <Link href="/profile" className="text-sm sm:text-base font-medium hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded">
+              <Link href="/profile" className={linkStyles}>
                 Profile
               </Link>
             )}
-            <Link href="/admin" className="text-sm sm:text-base font-medium hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded">
+            <Link href="/admin" className={linkStyles}>
               Admin
             </Link>
           </nav>
@@ -37,4 +39,3 @@ export default function Header() {
     </header>
   );
 }
-
