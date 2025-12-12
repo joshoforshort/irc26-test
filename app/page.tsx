@@ -143,7 +143,7 @@ export default function Home() {
                 legendary stories and FP hearts.
               </p>
               <p className="font-lovely font-semibold uppercase tracking-wide text-[13px] sm:text-[14px]">WE LOVE THIS GAME.</p>
-              <p>
+              <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                 This is an open invitation for cache owners to<br />
                 contribute their finest hides to IRC26
                 and make it<br />
