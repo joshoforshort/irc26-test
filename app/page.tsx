@@ -224,6 +224,112 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="px-4 sm:px-6 mt-10 sm:mt-14">
+          <div className="mx-auto max-w-2xl bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 sm:px-8 py-8 border border-white/50">
+            <h2 className="font-lovely text-3xl sm:text-4xl text-center mb-8">
+              FAQ<span className="text-2xl sm:text-3xl">s</span>
+            </h2>
+
+            <div className="mx-auto max-w-[68ch] text-[16px] leading-6 space-y-5 text-center font-arial-rounded font-bold">
+              <div>
+                <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                  WHAT IS IRC26?
+                </h3>
+                <p className="leading-relaxed mt-1 text-center">It's Raining Caches (IRC) is a project initiative by Sydney based geocacher, beautifulsky13. Based on the simple idea of making it 'rain caches' and with the support and creativity of 52 x CO's and 1 x dedicated reviewer, saw 208 hides simultaneously on the 19th January 2025 at 9am over NSW and ACT. IRC26 is set to be bigger and better for the community to enjoy.</p>
+              </div>
+
+              <div>
+                <div className="bg-green-100/80 px-6 sm:px-8 py-8 mt-6 -mx-6 sm:-mx-8 rounded-lg">
+                  <div className="mx-auto max-w-[70ch]">
+                    <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide text-center mb-2">
+                      HOW DO I GET INVOLVED?
+                    </h3>
+
+                    <p className="text-center text-[16px] leading-6 mb-4">
+                      We need as many CO's around Australia to hide<br />
+                      fp worthy caches!
+                    </p>
+
+                    <div className="mt-4">
+                      <p className="text-[16px] leading-6 text-center">
+                        <span className="font-lovely text-base sm:text-lg">1. PLEDGE:</span> Let us know you are planning to hide via the PLEDGE HIDES button on the home page or button on the top right of this website.
+                      </p>
+                    </div>
+
+                    <div className="mt-5">
+                      <p className="text-[16px] leading-6 text-center">
+                        <span className="font-lovely text-base sm:text-lg">2. PREPARE:</span> Follow the standard geocaching hide guidelines. Create, hide and submit your caches to your reviewer. Hides can be of any theme.
+                      </p>
+                    </div>
+
+                    <div className="mt-5">
+                      <p className="text-[16px] leading-6 text-center">
+                        <span className="font-lovely text-base sm:text-lg">IRC26 BANNER:</span> You can include this at the bottom of your cache page. Download it here.
+                      </p>
+                    </div>
+
+                    <div className="mt-6">
+                      <p className="text-[16px] leading-6 text-center">
+                        <span className="font-lovely text-base sm:text-lg">IMPORTANT:</span> You MUST include a publishing time as a note for each cache submission so your reviewer knows when to publish for IRC26.
+                      </p>
+                    </div>
+
+                    <div className="mt-6 space-y-1 text-center">
+                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                        NSW / ACT / VIC / TAS: PUBLISH - 31 JAN 2026 at 9AM
+                      </p>
+                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                        QLD: PUBLISH - 31 JAN at 8AM
+                      </p>
+                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                        WA: PUBLISH - 31 JAN 2026 at 6AM
+                      </p>
+                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                        SA: PUBLISH - 31 JAN 2026 at 8:30AM
+                      </p>
+                    </div>
+
+                    <div className="mt-6 text-center">
+                      <p className="font-lovely text-lg sm:text-xl">
+                        SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                  WHAT'S AN 'FP (Favourite Point) WORTHY' HIDE?
+                </h3>
+                <p className="leading-relaxed mt-1 text-center">A geocache that is creative, clever and had effort put into its hide. What makes you give an FP? Create your hides to the same standard!</p>
+              </div>
+
+              <div>
+                <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                  HOW MANY CACHES CAN I HIDE?
+                </h3>
+                <p className="leading-relaxed mt-1 text-center">Each CO can hide up to 10 caches.</p>
+              </div>
+
+              <div>
+                <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                  CAN I SHARE THIS WITH OTHER CO'S?
+                </h3>
+                <p className="leading-relaxed mt-1 text-center">Absolutely! We need your help to share the love and get IRC26 to as many hiders as possible.</p>
+              </div>
+
+              <div>
+                <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                  WHO CAN I CONTACT ABOUT IRC26?
+                </h3>
+                <p className="leading-relaxed mt-1 text-center">Drop a message to beautifulsky13 via the GC message centre or beautifulsky13gc@gmail.com. She's happy to help answer any questions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 5) Stats Strip */}
         <section id="our-stats" className="bg-white mt-14 sm:mt-16 pt-8 sm:pt-10 pb-8 sm:pb-10">
           <div className="max-w-6xl mx-auto px-4">
