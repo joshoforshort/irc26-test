@@ -144,10 +144,7 @@ export default function Home() {
               </p>
               <p className="font-lovely font-semibold uppercase tracking-wide text-[16px] sm:text-[17px]">WE LOVE THIS GAME.</p>
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
-                This is an open invitation for cache owners to<br />
-                contribute their finest hides to IRC26
-                and make it<br />
-                Rain Down Love.
+                This is an open invitation for cache owners to contribute their finest hides to IRC26 and make it Rain Down Love.
               </p>
             </div>
           </Card>
