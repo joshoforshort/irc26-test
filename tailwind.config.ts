@@ -36,6 +36,8 @@ const config: Config = {
       },
       fontFamily: {
         lovely: ['Lovely_Bubbles', 'system-ui', 'sans-serif'],
+        'arial-rounded': ['"Arial Rounded MT Bold"', '"Helvetica Rounded"', 'Arial', 'sans-serif'],
+        sans: ['"Arial Rounded MT Bold"', '"Helvetica Rounded"', 'Arial', 'sans-serif'],
       },
     },
   },
