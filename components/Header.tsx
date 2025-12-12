@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react';
 export default function Header() {
   const { data: session } = useSession();
 
-  const linkStyles = "px-3 py-2 text-sm sm:text-base font-medium rounded-full bg-white/20 hover:bg-white/30 active:bg-white/40 transition-all duration-150 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none";
+  const linkStyles = "px-2 py-1 text-xs sm:text-sm font-medium rounded-full bg-white/20 hover:bg-white/30 active:bg-white/40 transition-all duration-150 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
