@@ -380,7 +380,7 @@ export default function Home() {
 
                   {/* Countdown to Rain Start */}
                   <div className="flex flex-col">
-                    <div className="font-arial-rounded text-3xl sm:text-5xl font-semibold text-black mb-2 min-h-[4rem] sm:min-h-[5rem] flex items-end justify-center">
+                    <div className="font-arial-rounded text-3xl sm:text-4xl font-semibold text-black mb-2 min-h-[4rem] sm:min-h-[5rem] flex items-end justify-center">
                       <CountdownDisplay targetDate={RAIN_START_DATE} />
                     </div>
                     <div className="font-lovely text-sm sm:text-base font-semibold tracking-wide text-black uppercase">

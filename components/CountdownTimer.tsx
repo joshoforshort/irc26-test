@@ -44,7 +44,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }
 
   return (
-    <span className="font-mono text-2xl sm:text-3xl font-bold">
+    <span className="font-mono text-3xl sm:text-4xl font-bold">
       {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
     </span>
   );
