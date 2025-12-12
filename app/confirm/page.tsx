@@ -79,7 +79,7 @@ export default function ConfirmPage() {
       return;
     }
 
-    if (!formData.gcCode || !formData.cacheName || !formData.suburb || !formData.state || !formData.type || !formData.hiddenDate) {
+    if (!formData.gcCode || !formData.cacheName || !formData.state || !formData.type || !formData.hiddenDate) {
       setError('Please fill in all required fields');
       setLoading(false);
       return;
@@ -322,12 +322,11 @@ export default function ConfirmPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="suburb" className="block text-sm font-medium text-gray-800 mb-1">
-                Suburb / Region *
+                Suburb / Region (Optional)
               </label>
               <input
                 type="text"
                 id="suburb"
-                required
                 value={formData.suburb}
                 onChange={(e) => setFormData({ ...formData, suburb: e.target.value })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500"
