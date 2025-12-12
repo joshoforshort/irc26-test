@@ -187,28 +187,12 @@ export default function Home() {
                 GET INVOLVED
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 place-items-center">
-                <div className="flex flex-col items-center">
-                  <Link href="/pledge" className="block hover:opacity-90 transition-opacity w-[220px] h-[95px]">
-                    <Image
-                      src="/PLEDGE.PNG"
-                      alt="Pledge Caches"
-                      width={220}
-                      height={95}
-                      className="object-contain w-full h-full"
-                    />
-                  </Link>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Link href="/confirm" className="block hover:opacity-90 transition-opacity w-[220px] h-[95px]">
-                    <Image
-                      src="/GCCODE.PNG"
-                      alt="Confirm GC Codes"
-                      width={220}
-                      height={95}
-                      className="object-contain w-full h-full"
-                    />
-                  </Link>
-                </div>
+                <Link href="/pledge" className="btn-primary text-lg sm:text-xl px-8 py-4 font-lovely tracking-wide">
+                  Pledge Caches
+                </Link>
+                <Link href="/confirm" className="btn-secondary text-lg sm:text-xl px-8 py-4 font-lovely tracking-wide">
+                  Confirm GC Codes
+                </Link>
               </div>
             </div>
 
