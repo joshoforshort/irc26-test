@@ -6,6 +6,14 @@ import { CACHE_TYPES, AU_STATES, DIFFICULTY_RATINGS, TERRAIN_RATINGS, SUBMISSION
 import RequireAuth from '@/components/RequireAuth';
 import Card from '@/components/Card';
 import Link from 'next/link';
+import { UploadButton } from '@/app/api/uploadthing/components';
+
+type ImageData = {
+  url: string;
+  key: string;
+  width?: number;
+  height?: number;
+};
 
 type Pledge = {
   id: string;
@@ -23,6 +31,8 @@ export default function ConfirmPage() {
   const [success, setSuccess] = useState(false);
   const [pledges, setPledges] = useState<Pledge[]>([]);
   const [selectedPledgeId, setSelectedPledgeId] = useState('');
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [images, setImages] = useState<ImageData[]>([]);
   const [formData, setFormData] = useState({
     gcCode: '',
     cacheName: '',
@@ -34,6 +44,23 @@ export default function ConfirmPage() {
     hiddenDate: '',
     notes: '',
   });
+
+  const handleImageUpload = (res: any) => {
+    setUploadingImage(false);
+    if (res && Array.isArray(res)) {
+      const newImages = res.map((file: any) => ({
+        url: file.url,
+        key: file.key,
+        width: file.width,
+        height: file.height,
+      }));
+      setImages((prev) => [...prev, ...newImages].slice(0, 3));
+    }
+  };
+
+  const removeImage = (index: number) => {
+    setImages((prev) => prev.filter((_, i) => i !== index));
+  };
 
   const isPastDeadline = new Date() > SUBMISSION_DEADLINE;
 
@@ -93,6 +120,7 @@ export default function ConfirmPage() {
           pledgeId: selectedPledgeId,
           ...formData,
           hiddenDate: new Date(formData.hiddenDate).toISOString(),
+          images: images,
         }),
       });
 
@@ -352,6 +380,48 @@ export default function ConfirmPage() {
                 ))}
               </select>
             </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-800 mb-2">
+              Images (Optional, max 3)
+            </label>
+            {images.length > 0 && (
+              <div className="grid grid-cols-3 gap-2 mb-2">
+                {images.map((img, index) => (
+                  <div key={index} className="relative">
+                    <img src={img.url} alt={`Upload ${index + 1}`} className="w-full h-24 object-cover rounded" />
+                    <button
+                      type="button"
+                      onClick={() => removeImage(index)}
+                      className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            {images.length < 3 && (
+              <div>
+                <UploadButton
+                  endpoint="pledgeImages"
+                  onUploadBegin={() => {
+                    setUploadingImage(true);
+                  }}
+                  onClientUploadComplete={handleImageUpload}
+                  onUploadError={(error: Error) => {
+                    setUploadingImage(false);
+                    setError(`Upload failed: ${error.message}`);
+                  }}
+                />
+                {uploadingImage && (
+                  <p className="text-sm text-blue-600 mt-2 italic">
+                    ⏳ Please wait until the image appears on the page before submitting...
+                  </p>
+                )}
+              </div>
+            )}
           </div>
 
           <div>

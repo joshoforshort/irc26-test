@@ -15,7 +15,7 @@ export const pledgeSchema = z.object({
   title: z.string().max(200).optional(),
   cacheType: z.enum(['TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']),
   cacheSize: z.enum(['NANO', 'MICRO', 'SMALL', 'REGULAR', 'LARGE', 'OTHER']),
-  approxSuburb: z.string().min(1, 'Approximate suburb is required').max(200),
+  approxSuburb: z.string().max(200).optional(),
   approxState: z.enum(['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA']),
   conceptNotes: z.string().optional(),
   images: z.array(imageSchema).max(3, 'Maximum 3 images allowed').optional().default([]),
@@ -26,7 +26,7 @@ export const submissionSchema = z.object({
   pledgeId: z.string().min(1, 'Pledge ID is required'),
   gcCode: z.string().regex(/^GC[A-Z0-9]+$/, 'Invalid GC code format'),
   cacheName: z.string().min(1, 'Cache name is required').max(200),
-  suburb: z.string().min(1, 'Suburb is required').max(200),
+  suburb: z.string().max(200).optional(),
   state: z.enum(['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA']),
   difficulty: z.number().min(1.0).max(5.0).refine((val) => DIFFICULTY_RATINGS.includes(val as any), {
     message: 'Difficulty must be in 0.5 increments from 1.0 to 5.0',
@@ -37,6 +37,12 @@ export const submissionSchema = z.object({
   type: z.enum(['TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']),
   hiddenDate: z.string().datetime().or(z.date()),
   notes: z.string().optional(),
+  images: z.array(z.object({
+    url: z.string().url(),
+    key: z.string(),
+    width: z.number().optional(),
+    height: z.number().optional(),
+  })).max(3, 'Maximum 3 images allowed').optional().default([]),
 });
 
 // Update pledge schema

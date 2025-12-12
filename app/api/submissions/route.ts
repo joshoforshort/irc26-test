@@ -37,23 +37,27 @@ export async function POST(request: NextRequest) {
       ? new Date(validated.hiddenDate) 
       : validated.hiddenDate;
 
-    // Move images from pledge to submission (transfer, not copy)
-    let submissionImages = null;
+    // Combine images from pledge and new images from form
+    let pledgeImages: any[] = [];
     if (pledge.images) {
       // Handle various image formats (same logic as used elsewhere)
       if (Array.isArray(pledge.images)) {
-        submissionImages = pledge.images;
+        pledgeImages = pledge.images;
       } else if (typeof pledge.images === 'string') {
         try {
           const parsed = JSON.parse(pledge.images);
-          submissionImages = Array.isArray(parsed) ? parsed : null;
+          pledgeImages = Array.isArray(parsed) ? parsed : [];
         } catch {
-          submissionImages = null;
+          pledgeImages = [];
         }
       } else if (typeof pledge.images === 'object') {
-        submissionImages = pledge.images;
+        pledgeImages = [pledge.images];
       }
     }
+    
+    // Merge pledge images with new submission images (max 3 total)
+    const newImages = validated.images || [];
+    const submissionImages = [...pledgeImages, ...newImages].slice(0, 3);
 
     // Create submission and update pledge in a transaction
     const submission = await prisma.$transaction(async (tx) => {
@@ -65,7 +69,7 @@ export async function POST(request: NextRequest) {
           gcUsername: pledge.gcUsername,
           gcCode: validated.gcCode,
           cacheName: validated.cacheName,
-          suburb: validated.suburb,
+          suburb: validated.suburb || '',
           state: validated.state,
           difficulty: validated.difficulty,
           terrain: validated.terrain,
@@ -81,7 +85,7 @@ export async function POST(request: NextRequest) {
         where: { id: validated.pledgeId },
         data: { 
           status: 'HIDDEN',
-          images: null, // Clear images from pledge since they're now in submission
+          images: undefined, // Clear images from pledge since they're now in submission
         },
       });
 
