@@ -150,7 +150,7 @@ export default function AccountPage() {
                       <button
                         onClick={handleUpdateUsername}
                         disabled={updatingUsername || gcUsername === user?.gcUsername}
-                        className="bg-primary-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                        className="btn-primary text-sm disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
                       >
                         {updatingUsername ? 'Updating...' : 'Update'}
                       </button>
@@ -159,7 +159,7 @@ export default function AccountPage() {
 
                   <button
                     onClick={() => signOut({ callbackUrl: '/' })}
-                    className="text-red-600 hover:text-red-700 text-sm"
+                    className="btn text-sm bg-red-100 text-red-600 hover:bg-red-200 active:bg-red-300 shadow-none"
                   >
                     Sign Out
                   </button>
@@ -173,7 +173,7 @@ export default function AccountPage() {
                     <h2 className="font-lovely text-2xl font-bold text-gray-900">My Pledges</h2>
                     <Link
                       href="/pledge"
-                      className="bg-primary-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-primary-700 text-sm"
+                      className="btn-primary text-sm"
                     >
                       + New Pledge
                     </Link>
@@ -218,7 +218,7 @@ export default function AccountPage() {
                     <h2 className="font-lovely text-2xl font-bold text-gray-900">My Submissions</h2>
                     <Link
                       href="/confirm"
-                      className="bg-secondary-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-secondary-700 text-sm"
+                      className="btn-secondary text-sm"
                     >
                       + New Submission
                     </Link>

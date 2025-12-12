@@ -158,13 +158,13 @@ export default function PledgePage() {
               images: [],
             });
           }}
-          className="bg-primary-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-primary-700"
+          className="btn-primary"
         >
           Pledge Another
         </button>
         <button
           onClick={() => router.push('/account')}
-          className="bg-gray-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-gray-700"
+          className="btn-gray"
         >
           View My Pledges
         </button>
@@ -356,7 +356,7 @@ export default function PledgePage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+            className="w-full btn-primary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
           >
             {loading ? 'Submitting...' : 'Save and Pledge Another'}
           </button>

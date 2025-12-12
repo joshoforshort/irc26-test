@@ -70,7 +70,7 @@ function AdminSignInContent() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full mt-2 rounded-full px-4 py-2 text-sm font-semibold bg-black text-white hover:bg-black/90 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-arial-rounded"
+              className="w-full mt-2 btn bg-black text-white hover:bg-black/90 active:bg-black/80 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100 font-arial-rounded"
             >
               {loading ? 'Signing in...' : 'Sign in as admin'}
             </button>

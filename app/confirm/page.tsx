@@ -138,13 +138,13 @@ export default function ConfirmPage() {
       <div className="flex gap-4 justify-center">
         <button
           onClick={() => router.push('/account')}
-          className="bg-primary-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-primary-700"
+          className="btn-primary"
         >
           View My Submissions
         </button>
         <button
           onClick={() => router.push('/pledge')}
-          className="bg-gray-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-gray-700"
+          className="btn-gray"
         >
           Pledge Another
         </button>
@@ -160,7 +160,7 @@ export default function ConfirmPage() {
       </p>
       <Link
         href="/pledge"
-        className="inline-block bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700"
+        className="inline-block btn-primary"
       >
         Pledge First
       </Link>
@@ -373,7 +373,7 @@ export default function ConfirmPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-secondary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-secondary-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              className="w-full btn-secondary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
             >
               {loading ? 'Submitting...' : 'Confirm Cache'}
             </button>
