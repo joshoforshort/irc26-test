@@ -328,7 +328,7 @@ export default function Home() {
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   WHO CAN I CONTACT ABOUT IRC26?
                 </h3>
-                <p className="leading-tight mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Drop a message to beautifulsky13 via the GC message centre or beautifulsky13gc@gmail.com. She's happy to help answer any questions.</p>
+                <p className="leading-tight mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Drop a message to beautifulsky13 via the GC message centre or <a href="mailto:beautifulsky13gc@gmail.com" className="text-[#69bc45] hover:underline">beautifulsky13gc@gmail.com</a>. She's happy to help answer any questions.</p>
               </div>
             </div>
           </div>
