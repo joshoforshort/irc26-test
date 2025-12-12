@@ -387,7 +387,7 @@ export default function ConfirmPage() {
     <RequireAuth>
       <main
         className="min-h-screen bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/pledge_page_1.jpeg')" }}
+        style={{ backgroundImage: "url('/Background%20Storm.PNG')" }}
       >
         <div className="min-h-screen bg-black/60">
           <div className="relative z-10 flex justify-center items-start py-16 px-4">
