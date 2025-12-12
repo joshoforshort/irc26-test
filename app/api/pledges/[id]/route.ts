@@ -1,16 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { requireAuth } from '@/lib/session';
+import { getSession } from '@/lib/session';
 import { prisma } from '@/lib/prisma';
 import { updatePledgeSchema } from '@/lib/validation';
 import { isAdmin } from '@/lib/auth-config';
+import { verifyAdminSession } from '@/lib/admin-session';
 
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const session = await requireAuth();
+    const session = await getSession();
+    const isAdminSession = await verifyAdminSession();
     const pledgeId = params.id;
+
+    if (!session?.user && !isAdminSession) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const pledge = await prisma.pledge.findUnique({
       where: { id: pledgeId },
@@ -20,9 +26,8 @@ export async function GET(
       return NextResponse.json({ error: 'Pledge not found' }, { status: 404 });
     }
 
-    // Check ownership or admin
-    const userIsAdmin = isAdmin(session.user.email);
-    if (!userIsAdmin && pledge.userId !== session.user.id) {
+    const userIsAdmin = isAdminSession || (session?.user?.email && isAdmin(session.user.email));
+    if (!userIsAdmin && pledge.userId !== session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 
@@ -38,11 +43,15 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    const session = await requireAuth();
+    const session = await getSession();
+    const isAdminSession = await verifyAdminSession();
     const body = await request.json();
     const pledgeId = params.id;
 
-    // Get existing pledge
+    if (!session?.user && !isAdminSession) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const existingPledge = await prisma.pledge.findUnique({
       where: { id: pledgeId },
     });
@@ -51,34 +60,28 @@ export async function PATCH(
       return NextResponse.json({ error: 'Pledge not found' }, { status: 404 });
     }
 
-    // Check ownership or admin
-    const userIsAdmin = isAdmin(session.user.email);
-    if (!userIsAdmin && existingPledge.userId !== session.user.id) {
+    const userIsAdmin = isAdminSession || (session?.user?.email && isAdmin(session.user.email));
+    if (!userIsAdmin && existingPledge.userId !== session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 
-    // Validate input
     const validated = updatePledgeSchema.parse(body);
 
-    // Prepare update data
     const updateData: any = {
       ...validated,
       gcUsername: validated.gcUsername || existingPledge.gcUsername,
     };
 
-    // Handle images - if provided, use it; otherwise preserve existing
     if ('images' in validated && validated.images !== undefined) {
       updateData.images = validated.images;
     }
 
-    // Update pledge
     const pledge = await prisma.pledge.update({
       where: { id: pledgeId },
       data: updateData,
     });
 
-    // If admin, log the change
-    if (userIsAdmin) {
+    if (userIsAdmin && session?.user) {
       await prisma.auditLog.create({
         data: {
           actorId: session.user.id,
@@ -107,10 +110,14 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    const session = await requireAuth();
+    const session = await getSession();
+    const isAdminSession = await verifyAdminSession();
     const pledgeId = params.id;
 
-    // Get existing pledge
+    if (!session?.user && !isAdminSession) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const existingPledge = await prisma.pledge.findUnique({
       where: { id: pledgeId },
     });
@@ -119,14 +126,12 @@ export async function DELETE(
       return NextResponse.json({ error: 'Pledge not found' }, { status: 404 });
     }
 
-    // Check ownership or admin
-    const userIsAdmin = isAdmin(session.user.email);
-    if (!userIsAdmin && existingPledge.userId !== session.user.id) {
+    const userIsAdmin = isAdminSession || (session?.user?.email && isAdmin(session.user.email));
+    if (!userIsAdmin && existingPledge.userId !== session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 
-    // If admin, log the deletion
-    if (userIsAdmin) {
+    if (userIsAdmin && session?.user) {
       await prisma.auditLog.create({
         data: {
           actorId: session.user.id,
@@ -139,7 +144,6 @@ export async function DELETE(
       });
     }
 
-    // Delete pledge (cascade will handle submission)
     await prisma.pledge.delete({
       where: { id: pledgeId },
     });

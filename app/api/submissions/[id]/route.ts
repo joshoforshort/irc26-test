@@ -1,16 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { requireAuth } from '@/lib/session';
+import { getSession } from '@/lib/session';
 import { prisma } from '@/lib/prisma';
 import { updateSubmissionSchema } from '@/lib/validation';
 import { isAdmin } from '@/lib/auth-config';
+import { verifyAdminSession } from '@/lib/admin-session';
 
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const session = await requireAuth();
+    const session = await getSession();
+    const isAdminSession = await verifyAdminSession();
     const submissionId = params.id;
+
+    if (!session?.user && !isAdminSession) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const submission = await prisma.submission.findUnique({
       where: { id: submissionId },
@@ -20,9 +26,8 @@ export async function GET(
       return NextResponse.json({ error: 'Submission not found' }, { status: 404 });
     }
 
-    // Check ownership or admin
-    const userIsAdmin = isAdmin(session.user.email);
-    if (!userIsAdmin && submission.userId !== session.user.id) {
+    const userIsAdmin = isAdminSession || (session?.user?.email && isAdmin(session.user.email));
+    if (!userIsAdmin && submission.userId !== session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 
@@ -38,11 +43,15 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    const session = await requireAuth();
+    const session = await getSession();
+    const isAdminSession = await verifyAdminSession();
     const body = await request.json();
     const submissionId = params.id;
 
-    // Get existing submission
+    if (!session?.user && !isAdminSession) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const existingSubmission = await prisma.submission.findUnique({
       where: { id: submissionId },
     });
@@ -51,16 +60,13 @@ export async function PATCH(
       return NextResponse.json({ error: 'Submission not found' }, { status: 404 });
     }
 
-    // Check ownership or admin
-    const userIsAdmin = isAdmin(session.user.email);
-    if (!userIsAdmin && existingSubmission.userId !== session.user.id) {
+    const userIsAdmin = isAdminSession || (session?.user?.email && isAdmin(session.user.email));
+    if (!userIsAdmin && existingSubmission.userId !== session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 
-    // Validate input
     const validated = updateSubmissionSchema.parse(body);
 
-    // Parse hiddenDate if provided
     const updateData: any = { ...validated };
     if (validated.hiddenDate) {
       updateData.hiddenDate = typeof validated.hiddenDate === 'string' 
@@ -68,14 +74,12 @@ export async function PATCH(
         : validated.hiddenDate;
     }
 
-    // Update submission
     const submission = await prisma.submission.update({
       where: { id: submissionId },
       data: updateData,
     });
 
-    // If admin, log the change
-    if (userIsAdmin) {
+    if (userIsAdmin && session?.user) {
       await prisma.auditLog.create({
         data: {
           actorId: session.user.id,
@@ -104,10 +108,14 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    const session = await requireAuth();
+    const session = await getSession();
+    const isAdminSession = await verifyAdminSession();
     const submissionId = params.id;
 
-    // Get existing submission
+    if (!session?.user && !isAdminSession) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const existingSubmission = await prisma.submission.findUnique({
       where: { id: submissionId },
     });
@@ -116,14 +124,12 @@ export async function DELETE(
       return NextResponse.json({ error: 'Submission not found' }, { status: 404 });
     }
 
-    // Check ownership or admin
-    const userIsAdmin = isAdmin(session.user.email);
-    if (!userIsAdmin && existingSubmission.userId !== session.user.id) {
+    const userIsAdmin = isAdminSession || (session?.user?.email && isAdmin(session.user.email));
+    if (!userIsAdmin && existingSubmission.userId !== session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 
-    // If admin, log the deletion
-    if (userIsAdmin) {
+    if (userIsAdmin && session?.user) {
       await prisma.auditLog.create({
         data: {
           actorId: session.user.id,
@@ -136,7 +142,6 @@ export async function DELETE(
       });
     }
 
-    // Delete submission and update pledge status back to CONCEPT
     await prisma.$transaction([
       prisma.submission.delete({
         where: { id: submissionId },
