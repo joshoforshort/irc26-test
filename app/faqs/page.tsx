@@ -131,7 +131,7 @@ export default function FAQs() {
                     {/* 1. Pledge */}
                     <div className="mt-4">
                       <p className="text-[16px] leading-[1.25rem] text-center">
-                        <span className="font-lovely text-base sm:text-lg">1. PLEDGE:</span> Let us know you are planning to hide via the PLEDGE button and watch Our Stats grow!
+                        <span className="font-lovely text-base sm:text-lg">1. PLEDGE:</span> Let us know you are planning to hide and <a href="/pledge" className="text-[#69bc45] hover:underline">Pledge Your Caches here.</a> Watch Our Stats grow!
                       </p>
                     </div>
 
