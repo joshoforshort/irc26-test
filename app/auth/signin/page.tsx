@@ -76,6 +76,7 @@ function SignInContent() {
                   type="submit"
                   disabled={loading}
                   className="w-full btn-primary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
+                  style={{ backgroundColor: '#69bc45' }}
                 >
                   {loading ? 'Sending...' : "Let's go!"}
                 </button>
