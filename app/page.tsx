@@ -295,6 +295,12 @@ export default function Home() {
                         SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
                       </p>
                     </div>
+
+                    <div className="mt-5">
+                      <p className="text-[16px] leading-6 text-center">
+                        <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> On 14th February 2026, your caches will be published and it will rain caches across Australia!
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
