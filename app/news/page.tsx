@@ -56,28 +56,7 @@ export default function News() {
                 </p>
               </div>
 
-              {/* News Item 2 */}
-              <div>
-                <p className="text-sm text-gray-500 mb-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>{dateString}</p>
-                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-2 text-center">
-                  PLEDGING IS NOW OPEN
-                </h2>
-                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
-                  Ready to be a Rainmaker? You can now pledge your caches for IRC26. Whether you're planning one cache or ten, every contribution helps make the event a success. Head to the Pledge page to get started!
-                </p>
-              </div>
-
-              {/* News Item 3 */}
-              <div>
-                <p className="text-sm text-gray-500 mb-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>{dateString}</p>
-                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-2 text-center">
-                  SPREAD THE WORD
-                </h2>
-                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
-                  Know other cache owners who might want to participate? Share IRC26 with your geocaching friends! The more Rainmakers we have, the bigger the splash on publish day.
-                </p>
-              </div>
-            </div>
+                          </div>
           </div>
         </section>
       </div>
