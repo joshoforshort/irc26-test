@@ -236,7 +236,7 @@ export default function Home() {
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   WHAT IS IRC26?
                 </h3>
-                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>It's Raining Caches (IRC) is a project initiative by Sydney based geocacher, beautifulsky13. Based on the simple idea of making it 'rain caches' and with the support and creativity of 52 x CO's and 1 x dedicated reviewer, saw 208 hides simultaneously on the 19th January 2025 at 9am over NSW and ACT. IRC26 is set to be bigger and better for the community to enjoy.</p>
+                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>It's Raining Caches (IRC) is a project initiative by Sydney based geocacher, beautifulsky13. Based on the simple idea of making it 'rain caches' and with the support and creativity of 52 x CO's and 1 x dedicated reviewer, 208 hides were simultaneously published on the 19th January 2025 at 9am in NSW and ACT. IRC26 is set to be bigger and better for the community to enjoy.</p>
               </div>
 
               <div>
