@@ -231,9 +231,10 @@ export default function FAQs() {
             <div className="font-lovely text-center text-black">Loading stats...</div>
           ) : stats ? (
             <div className="mt-16">
-              <h2 className="text-center text-4xl md:text-5xl font-lovely mb-10 text-black">
+              <h2 className="text-center text-4xl md:text-5xl font-lovely mb-2 text-black">
                 OUR STATS
               </h2>
+              <p className="leading-relaxed mt-1 mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Numbers update daily - check back to watch them change.</p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
                 {/* Caches Pledged */}
