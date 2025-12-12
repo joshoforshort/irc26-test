@@ -33,9 +33,6 @@ export default function Header() {
                 Profile
               </Link>
             )}
-            <Link href="/admin" className={linkStyles}>
-              Admin
-            </Link>
           </nav>
         </div>
       </div>
