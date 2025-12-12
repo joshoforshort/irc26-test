@@ -293,7 +293,7 @@ export default function Home() {
 
                     <div className="mt-5">
                       <p className="text-[16px] leading-[1.25rem] text-center">
-                        <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> Hit publish and wait for your reviewer to lock your cache into publication. Let us know your GC Codes via the CONFIRM button.
+                        <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> Submit your caches for publication and convert your Pledge to confirm it as an IRC26 hide here.
                       </p>
                     </div>
                   </div>
