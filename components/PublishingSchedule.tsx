@@ -41,7 +41,7 @@ export default function PublishingSchedule() {
           </p>
           <p className="text-[14px] leading-6">
             Follow the standard geocaching hide guidelines. Create, hide and submit your
-            caches to your reviewer. Hides can be of any theme.
+            caches to your reviewer as you normally would. Hides can be of any theme.
           </p>
         </div>
 

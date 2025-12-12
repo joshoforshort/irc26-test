@@ -256,7 +256,7 @@ export default function Home() {
 
                     <div className="mt-5">
                       <p className="text-[16px] leading-[1.25rem] text-center">
-                        <span className="font-lovely text-base sm:text-lg">2. PREPARE:</span> Follow the standard geocaching hide guidelines. Create, hide and submit your caches to your reviewer. Hides can be of any theme.
+                        <span className="font-lovely text-base sm:text-lg">2. PREPARE:</span> Follow the standard geocaching hide guidelines. Create, hide and submit your caches to your reviewer as you normally would. Hides can be of any theme.
                       </p>
                     </div>
 
