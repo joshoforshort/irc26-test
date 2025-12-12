@@ -356,6 +356,7 @@ export default function PledgePage() {
             type="submit"
             disabled={loading}
             className="w-full btn-primary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
+            style={{ backgroundColor: '#69bc45' }}
           >
             {loading ? 'Submitting...' : 'Save and Pledge Another'}
           </button>
