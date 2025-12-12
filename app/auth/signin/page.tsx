@@ -45,7 +45,7 @@ function SignInContent() {
         <div className="relative z-10 flex justify-center items-center py-16 px-4">
           <Card className="max-w-md">
             <div className="text-center space-y-4">
-              <h1 className="font-lovely text-3xl sm:text-4xl text-gray-900">Sign In</h1>
+              <h1 className="font-lovely text-xl sm:text-2xl text-gray-900">Sign In</h1>
               <p className="text-gray-600 text-xs">
                 Enter your email address and we&apos;ll send you a magic link to sign in and opt you in to our mailing list. We will only use your email address to send you IRC26 updates.
               </p>
