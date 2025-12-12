@@ -60,7 +60,7 @@ export default function PledgePage() {
       return;
     }
 
-    if (!formData.cacheType || !formData.cacheSize || !formData.approxSuburb || !formData.approxState) {
+    if (!formData.cacheType || !formData.cacheSize || !formData.approxState) {
       setError('Please fill in all required fields');
       setLoading(false);
       return;
@@ -262,12 +262,11 @@ export default function PledgePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label htmlFor="approxSuburb" className="block text-sm font-medium text-gray-800 mb-1">
-              Approximate Suburb *
+              Approximate Suburb (Optional)
             </label>
             <input
               type="text"
               id="approxSuburb"
-              required
               value={formData.approxSuburb}
               onChange={(e) => setFormData({ ...formData, approxSuburb: e.target.value })}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
