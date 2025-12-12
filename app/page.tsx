@@ -133,7 +133,7 @@ export default function Home() {
             </h2>
 
             {/* Body copy */}
-            <div className="mx-auto max-w-[50ch] sm:max-w-[55ch] text-center text-[13px] sm:text-[14px] leading-6 whitespace-normal break-words space-y-3 font-arial-rounded font-bold">
+            <div className="mx-auto max-w-[50ch] sm:max-w-[55ch] text-center text-[16px] leading-6 whitespace-normal break-words space-y-3 font-arial-rounded font-bold">
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Love of hiding, love of finding.</p>
               <p className="!mt-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Love of log reading, love of log writing.</p>
               <p className="!mt-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
