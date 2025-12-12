@@ -298,7 +298,7 @@ export default function Home() {
 
                     <div className="mt-5">
                       <p className="text-[16px] leading-6 text-center">
-                        <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> On 14th February 2026, your caches will be published and it will rain caches across Australia!
+                        <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> Hit publish and wait for your reviewer to lock your cache into publication. Let us know your GC Codes via the 'CONFIRM' button.
                       </p>
                     </div>
                   </div>
