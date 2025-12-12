@@ -372,7 +372,8 @@ export default function ConfirmPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn-secondary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
+              className="w-full btn-primary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:active:scale-100"
+              style={{ backgroundColor: '#69bc45' }}
             >
               {loading ? 'Submitting...' : 'Confirm Cache'}
             </button>
