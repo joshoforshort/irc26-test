@@ -14,7 +14,7 @@ export default function VerifyRequestPage() {
             <div className="text-center space-y-4">
               <h1 className="font-lovely text-3xl sm:text-4xl text-gray-900">Check Your Email</h1>
               <p className="text-gray-600">
-                We&apos;ve sent you a magic link. Click the link in your email to sign in.
+                We&apos;ve sent you a magic link and it will take a few minutes to appear in your inbox - thanks for your patience! Click the link in your email to sign in.
               </p>
               <p className="text-sm text-gray-500">
                 If you don&apos;t see the email, check your spam folder.
