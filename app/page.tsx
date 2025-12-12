@@ -236,7 +236,7 @@ export default function Home() {
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   WHAT IS IRC26?
                 </h3>
-                <p className="leading-relaxed mt-1 text-center">It's Raining Caches (IRC) is a project initiative by Sydney based geocacher, beautifulsky13. Based on the simple idea of making it 'rain caches' and with the support and creativity of 52 x CO's and 1 x dedicated reviewer, saw 208 hides simultaneously on the 19th January 2025 at 9am over NSW and ACT. IRC26 is set to be bigger and better for the community to enjoy.</p>
+                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>It's Raining Caches (IRC) is a project initiative by Sydney based geocacher, beautifulsky13. Based on the simple idea of making it 'rain caches' and with the support and creativity of 52 x CO's and 1 x dedicated reviewer, saw 208 hides simultaneously on the 19th January 2025 at 9am over NSW and ACT. IRC26 is set to be bigger and better for the community to enjoy.</p>
               </div>
 
               <div>
@@ -303,28 +303,28 @@ export default function Home() {
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   WHAT'S AN 'FP (Favourite Point) WORTHY' HIDE?
                 </h3>
-                <p className="leading-relaxed mt-1 text-center">A geocache that is creative, clever and had effort put into its hide. What makes you give an FP? Create your hides to the same standard!</p>
+                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>A geocache that is creative, clever and had effort put into its hide. What makes you give an FP? Create your hides to the same standard!</p>
               </div>
 
               <div>
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   HOW MANY CACHES CAN I HIDE?
                 </h3>
-                <p className="leading-relaxed mt-1 text-center">Each CO can hide up to 10 caches.</p>
+                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Each CO can hide up to 10 caches.</p>
               </div>
 
               <div>
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   CAN I SHARE THIS WITH OTHER CO'S?
                 </h3>
-                <p className="leading-relaxed mt-1 text-center">Absolutely! We need your help to share the love and get IRC26 to as many hiders as possible.</p>
+                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Absolutely! We need your help to share the love and get IRC26 to as many hiders as possible.</p>
               </div>
 
               <div>
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   WHO CAN I CONTACT ABOUT IRC26?
                 </h3>
-                <p className="leading-relaxed mt-1 text-center">Drop a message to beautifulsky13 via the GC message centre or beautifulsky13gc@gmail.com. She's happy to help answer any questions.</p>
+                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Drop a message to beautifulsky13 via the GC message centre or beautifulsky13gc@gmail.com. She's happy to help answer any questions.</p>
               </div>
             </div>
           </div>
