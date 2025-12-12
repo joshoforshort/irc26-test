@@ -175,7 +175,7 @@ export default function FAQs() {
                     {/* Submissions close */}
                     <div className="mt-6 text-center">
                       <p className="font-lovely text-lg sm:text-xl">
-                        SUBMISSIONS CLOSE: 14 FEB 2026 AT 6PM
+                        SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
                       </p>
                     </div>
 
