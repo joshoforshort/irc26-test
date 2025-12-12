@@ -142,7 +142,7 @@ export default function Home() {
                 TOTTs, accurate co-ordinates, amazing places never been to before, community, legacy,
                 legendary stories and FP hearts.
               </p>
-              <p className="font-lovely font-semibold uppercase tracking-wide text-[13px] sm:text-[14px]">WE LOVE THIS GAME.</p>
+              <p className="font-lovely font-semibold uppercase tracking-wide text-[16px] sm:text-[17px]">WE LOVE THIS GAME.</p>
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                 This is an open invitation for cache owners to<br />
                 contribute their finest hides to IRC26
