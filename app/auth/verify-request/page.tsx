@@ -16,7 +16,7 @@ export default function VerifyRequestPage() {
               <p className="text-gray-600 text-xs">
                 We&apos;ve sent you a magic link and it will take a few minutes to appear in your inbox - thanks for your patience! Click the link in your email to sign in.
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-xs text-gray-500">
                 If you don&apos;t see the email, check your spam folder.
               </p>
             </div>
