@@ -253,7 +253,7 @@ export default function Home() {
 
                     <div className="mt-4">
                       <p className="text-[16px] leading-6 text-center">
-                        <span className="font-lovely text-base sm:text-lg">1. PLEDGE:</span> Let us know you are planning to hide via the PLEDGE HIDES button on the home page or button on the top right of this website.
+                        <span className="font-lovely text-base sm:text-lg">1. PLEDGE:</span> Let us know you are planning to hide via the PLEDGE button and watch Our Stats grow!
                       </p>
                     </div>
 
