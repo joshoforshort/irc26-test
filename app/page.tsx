@@ -133,7 +133,7 @@ export default function Home() {
             </h2>
 
             {/* Body copy */}
-            <div className="mx-auto max-w-[50ch] sm:max-w-[55ch] text-center text-[16px] leading-6 whitespace-normal break-words space-y-3 font-arial-rounded font-bold">
+            <div className="mx-auto max-w-[50ch] sm:max-w-[55ch] text-center text-[16px] leading-[1.25rem] whitespace-normal break-words space-y-3 font-arial-rounded font-bold">
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Love of hiding, love of finding.</p>
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Love of log reading, love of log writing.</p>
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
@@ -231,7 +231,7 @@ export default function Home() {
               FAQ<span className="text-2xl sm:text-3xl">s</span>
             </h2>
 
-            <div className="mx-auto max-w-[68ch] text-[16px] leading-6 space-y-5 text-center font-arial-rounded font-bold">
+            <div className="mx-auto max-w-[68ch] text-[16px] leading-[1.25rem] space-y-5 text-center font-arial-rounded font-bold">
               <div>
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   WHAT IS IRC26?
@@ -246,46 +246,46 @@ export default function Home() {
                       HOW DO I GET INVOLVED?
                     </h3>
 
-                    <p className="text-center text-[16px] leading-6 mb-4">
+                    <p className="text-center text-[16px] leading-[1.25rem] mb-4">
                       We need as many CO's around Australia to hide<br />
                       fp worthy caches!
                     </p>
 
                     <div className="mt-4">
-                      <p className="text-[16px] leading-6 text-center">
+                      <p className="text-[16px] leading-[1.25rem] text-center">
                         <span className="font-lovely text-base sm:text-lg">1. PLEDGE:</span> Let us know you are planning to hide via the PLEDGE button and watch Our Stats grow!
                       </p>
                     </div>
 
                     <div className="mt-5">
-                      <p className="text-[16px] leading-6 text-center">
+                      <p className="text-[16px] leading-[1.25rem] text-center">
                         <span className="font-lovely text-base sm:text-lg">2. PREPARE:</span> Follow the standard geocaching hide guidelines. Create, hide and submit your caches to your reviewer. Hides can be of any theme.
                       </p>
                     </div>
 
                     <div className="mt-5">
-                      <p className="text-[16px] leading-6 text-center">
+                      <p className="text-[16px] leading-[1.25rem] text-center">
                         <span className="font-lovely text-base sm:text-lg">IRC26 BANNER:</span> You can include this at the bottom of your cache page. Download it here.
                       </p>
                     </div>
 
                     <div className="mt-6">
-                      <p className="text-[16px] leading-6 text-center">
+                      <p className="text-[16px] leading-[1.25rem] text-center">
                         <span className="font-lovely text-base sm:text-lg">IMPORTANT!:</span> You MUST include a publishing time as a note for each cache submission so your reviewer knows when to publish for IRC26.
                       </p>
                     </div>
 
                     <div className="mt-6 space-y-1 text-center border-2 p-4 rounded" style={{ borderColor: '#69bc45' }}>
-                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                      <p className="font-arial-rounded font-bold text-[16px] leading-[1.25rem]">
                         NSW / ACT / VIC / TAS: PUBLISH - 14 FEB 2026 at 9AM
                       </p>
-                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                      <p className="font-arial-rounded font-bold text-[16px] leading-[1.25rem]">
                         QLD: PUBLISH - 14 FEB at 8AM
                       </p>
-                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                      <p className="font-arial-rounded font-bold text-[16px] leading-[1.25rem]">
                         WA: PUBLISH - 14 FEB 2026 at 6AM
                       </p>
-                      <p className="font-arial-rounded font-bold text-[16px] leading-6">
+                      <p className="font-arial-rounded font-bold text-[16px] leading-[1.25rem]">
                         SA: PUBLISH - 14 FEB 2026 at 8:30AM
                       </p>
                     </div>
@@ -297,7 +297,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-5">
-                      <p className="text-[16px] leading-6 text-center">
+                      <p className="text-[16px] leading-[1.25rem] text-center">
                         <span className="font-lovely text-base sm:text-lg">3. PUBLISH:</span> Hit publish and wait for your reviewer to lock your cache into publication. Let us know your GC Codes via the CONFIRM button.
                       </p>
                     </div>

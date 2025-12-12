@@ -44,7 +44,7 @@ export default function News() {
               NEWS
             </h1>
 
-            <div className="mx-auto max-w-[68ch] text-[16px] leading-6 space-y-8 text-center font-arial-rounded font-bold">
+            <div className="mx-auto max-w-[68ch] text-[16px] leading-[1.25rem] space-y-8 text-center font-arial-rounded font-bold">
               {/* News Item 1 */}
               <div>
                 <p className="text-sm text-gray-500 mb-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>{dateString}</p>
