@@ -71,23 +71,23 @@ export default function PublishingSchedule() {
         {/* Region times */}
         <div className="mt-6 space-y-1 text-center">
           <p className="font-semibold text-[14px] leading-6">
-            NSW / ACT / VIC / TAS: PUBLISH - 31 JAN 2026 at 9AM
+            NSW / ACT / VIC / TAS: PUBLISH - 14 FEB 2026 at 9AM
           </p>
           <p className="font-semibold text-[14px] leading-6">
-            QLD: PUBLISH - 31 JAN at 8AM
+            QLD: PUBLISH - 14 FEB at 8AM
           </p>
           <p className="font-semibold text-[14px] leading-6">
-            WA: PUBLISH - 31 JAN 2026 at 6AM
+            WA: PUBLISH - 14 FEB 2026 at 6AM
           </p>
           <p className="font-semibold text-[14px] leading-6">
-            SA: PUBLISH - 31 JAN 2026 at 8:30AM
+            SA: PUBLISH - 14 FEB 2026 at 8:30AM
           </p>
         </div>
 
         {/* Submissions close */}
         <div className="mt-6 text-center">
           <p className="font-lovely text-2xl sm:text-3xl">
-            SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
+            SUBMISSIONS CLOSE: 14 FEB 2026 AT 6PM
           </p>
         </div>
       </div>

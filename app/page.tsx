@@ -280,19 +280,19 @@ export default function Home() {
                         NSW / ACT / VIC / TAS: PUBLISH - 14 FEB 2026 at 9AM
                       </p>
                       <p className="font-arial-rounded font-bold text-[16px] leading-6">
-                        QLD: PUBLISH - 31 JAN at 8AM
+                        QLD: PUBLISH - 14 FEB at 8AM
                       </p>
                       <p className="font-arial-rounded font-bold text-[16px] leading-6">
-                        WA: PUBLISH - 31 JAN 2026 at 6AM
+                        WA: PUBLISH - 14 FEB 2026 at 6AM
                       </p>
                       <p className="font-arial-rounded font-bold text-[16px] leading-6">
-                        SA: PUBLISH - 31 JAN 2026 at 8:30AM
+                        SA: PUBLISH - 14 FEB 2026 at 8:30AM
                       </p>
                     </div>
 
                     <div className="mt-6 text-center">
                       <p className="font-lovely text-lg sm:text-xl">
-                        SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
+                        SUBMISSIONS CLOSE: 14 FEB 2026 AT 6PM
                       </p>
                     </div>
 
