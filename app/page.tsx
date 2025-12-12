@@ -135,7 +135,7 @@ export default function Home() {
             {/* Body copy */}
             <div className="mx-auto max-w-[50ch] sm:max-w-[55ch] text-center text-[13px] sm:text-[14px] leading-6 whitespace-normal break-words space-y-3 font-arial-rounded font-bold">
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Love of hiding, love of finding.</p>
-              <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Love of log reading, love of log writing.</p>
+              <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif', marginTop: '0.25rem' }}>Love of log reading, love of log writing.</p>
               <p style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                 Love of mystery, adventure, learning, challenges, interesting D/T combos, evil,
                 notifications, [FTF]s, DNF avenging, swag swaps, creative containers, nudges, PAFs,
