@@ -288,10 +288,7 @@ export default function Home() {
                       <p className="font-arial-rounded font-bold text-[16px] leading-[1.25rem]">
                         SA: PUBLISH - 14 FEB 2026 at 8:30AM
                       </p>
-                    </div>
-
-                    <div className="mt-6 text-center">
-                      <p className="font-lovely text-lg sm:text-xl">
+                      <p className="font-lovely text-xs sm:text-sm mt-3">
                         SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
                       </p>
                     </div>
