@@ -145,14 +145,14 @@ export default function FAQs() {
                     {/* IRC26 Banner */}
                     <div className="mt-5">
                       <p className="text-[16px] leading-[1.25rem] text-center">
-                        <span className="font-lovely text-base sm:text-lg">IRC26 BANNER:</span> You can include this at the bottom of your cache page. Download it here.
+                        <span className="font-lovely text-base sm:text-lg" style={{ color: '#69bc45' }}>IRC26 BANNER:</span> You can include this at the bottom of your cache page. Download it here.
                       </p>
                     </div>
 
                     {/* IMPORTANT */}
                     <div className="mt-6">
                       <p className="text-[16px] leading-[1.25rem] text-center">
-                        <span className="font-lovely text-base sm:text-lg">IMPORTANT!:</span> You MUST include a publishing time as a note for each cache submission so your reviewer knows when to publish for IRC26.
+                        <span className="font-lovely text-base sm:text-lg" style={{ color: '#69bc45' }}>IMPORTANT!:</span> You MUST include a publishing time as a note for each cache submission so your reviewer knows when to publish for IRC26.
                       </p>
                     </div>
 

@@ -47,7 +47,7 @@ export default function PublishingSchedule() {
 
         {/* IRC26 Banner */}
         <div className="mt-5">
-          <p className="font-lovely text-xl sm:text-2xl leading-tight mb-1">
+          <p className="font-lovely text-xl sm:text-2xl leading-tight mb-1" style={{ color: '#69bc45' }}>
             IRC26 BANNER:
           </p>
           <p className="text-[14px] leading-6">
@@ -59,7 +59,7 @@ export default function PublishingSchedule() {
 
         {/* IMPORTANT */}
         <div className="mt-6">
-          <p className="font-lovely text-xl sm:text-2xl leading-tight mb-1">
+          <p className="font-lovely text-xl sm:text-2xl leading-tight mb-1" style={{ color: '#69bc45' }}>
             IMPORTANT:
           </p>
           <p className="text-[14px] leading-6">
