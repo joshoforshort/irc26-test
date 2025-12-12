@@ -271,7 +271,7 @@ export default function Home() {
 
                     <div className="mt-6">
                       <p className="text-[16px] leading-6 text-center">
-                        <span className="font-lovely text-base sm:text-lg">IMPORTANT:</span> You MUST include a publishing time as a note for each cache submission so your reviewer knows when to publish for IRC26.
+                        <span className="font-lovely text-base sm:text-lg">IMPORTANT!:</span> You MUST include a publishing time as a note for each cache submission so your reviewer knows when to publish for IRC26.
                       </p>
                     </div>
 
