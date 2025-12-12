@@ -316,7 +316,7 @@ export default function Home() {
                 <h3 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
                   HOW MANY CACHES CAN I HIDE?
                 </h3>
-                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Each CO can hide up to 10 caches.<br />If you would like to hide more than 10, please contact beautifulsky13 with your idea.</p>
+                <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Each CO can hide up to 10 caches.<br />If you would like to hide more than 10,<br />please contact beautifulsky13 with your idea.</p>
               </div>
 
               <div>
