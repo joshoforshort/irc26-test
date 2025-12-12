@@ -277,7 +277,7 @@ export default function Home() {
 
                     <div className="mt-6 space-y-1 text-center border-2 p-4 rounded" style={{ borderColor: '#69bc45' }}>
                       <p className="font-arial-rounded font-bold text-[16px] leading-6">
-                        NSW / ACT / VIC / TAS: PUBLISH - 31 JAN 2026 at 9AM
+                        NSW / ACT / VIC / TAS: PUBLISH - 14 FEB 2026 at 9AM
                       </p>
                       <p className="font-arial-rounded font-bold text-[16px] leading-6">
                         QLD: PUBLISH - 31 JAN at 8AM
