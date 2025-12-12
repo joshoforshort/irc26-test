@@ -1,8 +1,21 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function News() {
+  const [dateString, setDateString] = useState<string>('');
+
+  useEffect(() => {
+    const today = new Date();
+    const formatted = today.toLocaleDateString('en-AU', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+    setDateString(formatted);
+  }, []);
+
   return (
     <main
       className="relative bg-cover bg-center bg-fixed"
@@ -34,7 +47,8 @@ export default function News() {
             <div className="mx-auto max-w-[68ch] text-[16px] leading-6 space-y-8 text-center font-arial-rounded font-bold">
               {/* News Item 1 */}
               <div>
-                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                <p className="text-sm text-gray-500 mb-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>{dateString}</p>
+                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-2 text-center">
                   WELCOME TO IRC26!
                 </h2>
                 <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
@@ -44,7 +58,8 @@ export default function News() {
 
               {/* News Item 2 */}
               <div>
-                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                <p className="text-sm text-gray-500 mb-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>{dateString}</p>
+                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-2 text-center">
                   PLEDGING IS NOW OPEN
                 </h2>
                 <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
@@ -54,7 +69,8 @@ export default function News() {
 
               {/* News Item 3 */}
               <div>
-                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mt-6 mb-2 text-center">
+                <p className="text-sm text-gray-500 mb-1" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>{dateString}</p>
+                <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-2 text-center">
                   SPREAD THE WORD
                 </h2>
                 <p className="leading-relaxed mt-1 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
