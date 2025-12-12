@@ -17,7 +17,7 @@ interface Stats {
   byType: Record<string, number>;
 }
 
-type DateFormat = 'DD MMMM YYYY' | 'D MMMM YYYY' | 'DDth MMMM YYYY' | 'DD MMM YYYY' | 'DDth MMM YYYY' | 'HH[AM/PM] [TZ]' | 'hA [AEST]' | 'HH[AM/PM] DD MMM YYYY' | 'hA DD MMM YYYY' | 'hA DDth MMM YYYY' | 'DAYNAME';
+type DateFormat = 'DD MMMM YYYY' | 'D MMMM YYYY' | 'DDth MMMM YYYY' | 'DD MMM YYYY' | 'DDth MMM YYYY' | 'HH[AM/PM] [TZ]' | 'hA [AEST]' | 'HH[AM/PM] DD MMM YYYY' | 'hA DD MMM YYYY' | 'hA DDth MMM YYYY' | 'DDth MMM YYYY hA AEST' | 'DAYNAME';
 
 function ClientDate({ date, format }: { date: Date; format: DateFormat }) {
   const [mounted, setMounted] = useState(false);
@@ -218,7 +218,7 @@ export default function Home() {
                 SUBMISSIONS CLOSE
               </h3>
               <p className="mt-2 mb-6 font-lovely text-lg sm:text-xl">
-                <ClientDate date={SUBMISSION_DEADLINE} format="hA DDth MMM YYYY" />
+                <ClientDate date={SUBMISSION_DEADLINE} format="DDth MMM YYYY hA AEST" />
               </p>
             </div>
           </div>

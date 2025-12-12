@@ -29,6 +29,7 @@ export function formatDate(
     | 'HH[AM/PM] DD MMM YYYY'
     | 'hA DD MMM YYYY'
     | 'hA DDth MMM YYYY'
+    | 'DDth MMM YYYY hA AEST'
     | 'DAYNAME'
 ): string {
   const day = date.getDate();
@@ -65,6 +66,8 @@ export function formatDate(
       return `${hours12}${ampm} ${day} ${monthShort} ${year}`;
     case 'hA DDth MMM YYYY':
       return `${hours12}${ampm} ${day}${ordinalSuffix} ${monthShort} ${year}`;
+    case 'DDth MMM YYYY hA AEST':
+      return `${day}${ordinalSuffix} ${monthShort} ${year} ${hours12}${ampmUpper} AEST`;
     case 'DAYNAME':
       return dayName;
     default:
