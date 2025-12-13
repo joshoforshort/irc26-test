@@ -72,6 +72,7 @@ model EditToken {
 }
 
 enum CacheType {
+  UNDECIDED
   TRADITIONAL
   MULTI
   MYSTERY
@@ -81,7 +82,7 @@ enum CacheType {
 }
 
 enum CacheSize {
-  NANO
+  UNDECIDED
   MICRO
   SMALL
   REGULAR

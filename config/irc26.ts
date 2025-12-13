@@ -39,6 +39,7 @@ export const SUBMISSION_DEADLINE = toDate(SUBMISSION_DEADLINE_ISO);
 
 // Cache types (matching Prisma enum)
 export const CACHE_TYPES = [
+  'UNDECIDED',
   'TRADITIONAL',
   'MULTI',
   'MYSTERY',
@@ -49,7 +50,7 @@ export const CACHE_TYPES = [
 
 // Cache sizes (matching Prisma enum)
 export const CACHE_SIZES = [
-  'NANO',
+  'UNDECIDED',
   'MICRO',
   'SMALL',
   'REGULAR',

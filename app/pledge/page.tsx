@@ -110,6 +110,7 @@ export default function PledgePage() {
   };
 
   const cacheTypeLabels: Record<string, string> = {
+    UNDECIDED: 'Undecided',
     TRADITIONAL: 'Traditional',
     MULTI: 'Multi-cache',
     MYSTERY: 'Mystery',
@@ -119,7 +120,7 @@ export default function PledgePage() {
   };
 
   const cacheSizeLabels: Record<string, string> = {
-    NANO: 'Nano',
+    UNDECIDED: 'Undecided',
     MICRO: 'Micro',
     SMALL: 'Small',
     REGULAR: 'Regular',

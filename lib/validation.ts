@@ -13,8 +13,8 @@ const imageSchema = z.object({
 export const pledgeSchema = z.object({
   gcUsername: z.string().min(1, 'Geocaching username is required').max(100),
   title: z.string().max(200).optional(),
-  cacheType: z.enum(['TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']),
-  cacheSize: z.enum(['NANO', 'MICRO', 'SMALL', 'REGULAR', 'LARGE', 'OTHER']),
+  cacheType: z.enum(['UNDECIDED', 'TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']),
+  cacheSize: z.enum(['UNDECIDED', 'MICRO', 'SMALL', 'REGULAR', 'LARGE', 'OTHER']),
   approxSuburb: z.string().max(200).optional(),
   approxState: z.enum(['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA']),
   conceptNotes: z.string().optional(),
@@ -48,8 +48,8 @@ export const submissionSchema = z.object({
 // Update pledge schema
 export const updatePledgeSchema = pledgeSchema.partial().extend({
   gcUsername: z.string().min(1).max(100).optional(),
-  cacheType: z.enum(['TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']).optional(),
-  cacheSize: z.enum(['NANO', 'MICRO', 'SMALL', 'REGULAR', 'LARGE', 'OTHER']).optional(),
+  cacheType: z.enum(['UNDECIDED', 'TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']).optional(),
+  cacheSize: z.enum(['UNDECIDED', 'MICRO', 'SMALL', 'REGULAR', 'LARGE', 'OTHER']).optional(),
   approxSuburb: z.string().min(1).max(200).optional(),
   approxState: z.enum(['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA']).optional(),
   images: z.array(imageSchema).max(3, 'Maximum 3 images allowed').optional(),
