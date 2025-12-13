@@ -155,12 +155,12 @@ export default function Home() {
           <div className="mx-auto max-w-2xl rounded-2xl shadow-2xl overflow-hidden bg-white/95 backdrop-blur-md border border-white/50">
             {/* Top: THE CHALLENGE */}
             <div className="px-5 sm:px-8 py-6">
-              <div className="mx-auto w-12 h-12 flex items-center justify-center mb-3">
+              <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mb-4 sm:mb-5">
                 <Image
                   src="/IRC Circle.PNG"
                   alt="IRC26 Logo"
-                  width={48}
-                  height={48}
+                  width={80}
+                  height={80}
                   className="object-contain"
                 />
               </div>
