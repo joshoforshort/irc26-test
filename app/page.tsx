@@ -381,7 +381,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="font-lovely text-sm sm:text-base font-semibold tracking-wide text-black uppercase mb-2">
-                      LATEST RAINMAKER
+                      CO SHOWING SOME LOVE
                     </div>
                     <p className="leading-tight" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                       @{stats.latestPledge.gcUsername} just pledged {stats.latestPledge.title || 'a cache'} in {stats.latestPledge.state}.
