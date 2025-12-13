@@ -90,12 +90,12 @@ export default function FAQs() {
         {/* FAQ Card */}
         <section className="px-4 sm:px-6 mb-14 sm:mb-16">
           <div className="mx-auto max-w-2xl bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 sm:px-8 py-8 border border-white/50">
-            <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center mb-8 sm:mb-10">
+            <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mb-4 sm:mb-5">
               <Image
                 src="/IRC Circle.PNG"
                 alt="IRC26 Circle"
-                width={160}
-                height={160}
+                width={80}
+                height={80}
                 className="object-contain"
               />
             </div>
