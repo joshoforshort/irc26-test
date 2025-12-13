@@ -51,7 +51,7 @@ export default function PublishingSchedule() {
             IRC26 ARTWORK:
           </p>
           <p className="text-[14px] leading-6">
-            You can include this at the bottom of your cache page. <a href="/IRC26Banner.jpg" download className="text-[#69bc45] hover:underline">Download IRC26 Banner</a> | <a href="/IRC Circle.PNG" download className="text-[#69bc45] hover:underline">Download IRC26 Heart</a>
+            Download artwork for your cache page: <a href="/IRC26Banner.jpg" download className="text-[#69bc45] hover:underline">IRC26 Banner</a> | <a href="/IRC Circle.PNG" download className="text-[#69bc45] hover:underline">IRC26 Heart</a>
           </p>
         </div>
 
