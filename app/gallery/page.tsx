@@ -8,7 +8,7 @@ interface GalleryImage {
   key: string;
   title: string | null;
   gcUsername: string;
-  source: string;
+  state: string;
 }
 
 export default function GalleryPage() {
@@ -76,7 +76,7 @@ export default function GalleryPage() {
                     <div className="p-2 text-xs bg-black/60 text-white absolute bottom-0 left-0 right-0">
                       <div className="font-semibold truncate">{img.title || 'Untitled'}</div>
                       <div className="text-[11px] opacity-90 truncate">
-                        @{img.gcUsername} • {img.source}
+                        @{img.gcUsername} • {img.state}
                       </div>
                     </div>
                   </div>

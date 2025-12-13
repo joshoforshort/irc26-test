@@ -16,6 +16,7 @@ export async function GET() {
         gcUsername: true,
         images: true,
         createdAt: true,
+        approxState: true,
       },
       orderBy: {
         createdAt: 'desc',
@@ -28,7 +29,7 @@ export async function GET() {
       title: string | null;
       gcUsername: string;
       createdAt: Date;
-      source: string;
+      state: string;
     }[] = [];
 
     for (const pledge of pledges) {
@@ -40,7 +41,7 @@ export async function GET() {
             title: pledge.title,
             gcUsername: pledge.gcUsername,
             createdAt: pledge.createdAt,
-            source: 'Pledge',
+            state: pledge.approxState,
           });
         }
       }
