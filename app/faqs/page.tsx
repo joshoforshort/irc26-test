@@ -92,8 +92,8 @@ export default function FAQs() {
           <div className="mx-auto max-w-2xl bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 sm:px-8 py-8 border border-white/50">
             <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center mb-8 sm:mb-10">
               <Image
-                src="/IRC26_Logo_1.png"
-                alt="IRC26 Logo"
+                src="/IRC Circle.PNG"
+                alt="IRC26 Circle"
                 width={160}
                 height={160}
                 className="object-contain"
