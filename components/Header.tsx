@@ -19,6 +19,9 @@ export default function Header() {
             <Link href="/news" className={linkStyles}>
               News
             </Link>
+            <Link href="/gallery" className={linkStyles}>
+              Gallery
+            </Link>
             <Link href="/pledge" className={linkStyles}>
               Pledge
             </Link>
