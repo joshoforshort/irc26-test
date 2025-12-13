@@ -49,9 +49,12 @@ export default function GalleryPage() {
                 className="object-contain"
               />
             </div>
-            <h1 className="font-lovely text-3xl sm:text-4xl text-center mb-8">
+            <h1 className="font-lovely text-3xl sm:text-4xl text-center mb-4">
               Gallery
             </h1>
+            <p className="text-center text-[16px] leading-[1.25rem] font-arial-rounded font-bold mb-8">
+              Here's what other CO's around the country are working on for IRC26. Definitely fp worthy...
+            </p>
 
             {loading ? (
               <div className="text-center font-arial-rounded font-bold">Loading images...</div>
