@@ -4,7 +4,7 @@ import { prisma } from '@/lib/prisma';
 export async function GET() {
   try {
     // Get total pledges and submissions
-    const [totalPledged, totalSubmissions, allPledges, allSubmissions] = await Promise.all([
+    const [totalPledged, totalSubmissions, allPledges, allSubmissions, latestPledge] = await Promise.all([
       prisma.pledge.count(),
       prisma.submission.count(),
       prisma.pledge.findMany({
@@ -12,6 +12,10 @@ export async function GET() {
       }),
       prisma.submission.findMany({
         select: { gcUsername: true, state: true, type: true },
+      }),
+      prisma.pledge.findFirst({
+        orderBy: { createdAt: 'desc' },
+        select: { gcUsername: true, title: true, approxState: true },
       }),
     ]);
 
@@ -39,6 +43,11 @@ export async function GET() {
       rainmakers,
       byState,
       byType,
+      latestPledge: latestPledge ? {
+        gcUsername: latestPledge.gcUsername,
+        title: latestPledge.title,
+        state: latestPledge.approxState,
+      } : null,
     });
   } catch (error) {
     console.error('Error fetching stats:', error);

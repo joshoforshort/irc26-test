@@ -15,6 +15,11 @@ interface Stats {
   rainmakers: number;
   byState: Record<string, number>;
   byType: Record<string, number>;
+  latestPledge: {
+    gcUsername: string;
+    title: string | null;
+    state: string;
+  } | null;
 }
 
 type DateFormat = 'DD MMMM YYYY' | 'D MMMM YYYY' | 'DDth MMMM YYYY' | 'DD MMM YYYY' | 'DDth MMM YYYY' | 'HH[AM/PM] [TZ]' | 'hA [AEST]' | 'HH[AM/PM] DD MMM YYYY' | 'hA DD MMM YYYY' | 'hA DDth MMM YYYY' | 'DDth MMM YYYY hA AEST' | 'DAYNAME';
@@ -78,6 +83,11 @@ interface Stats {
   rainmakers: number;
   byState: Record<string, number>;
   byType: Record<string, number>;
+  latestPledge: {
+    gcUsername: string;
+    title: string | null;
+    state: string;
+  } | null;
 }
 
 export default function Home() {
@@ -358,6 +368,12 @@ export default function Home() {
                   OUR STATS
                 </h2>
                 <p className="leading-tight mt-1 mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Numbers update daily - check back to watch them change.</p>
+
+                {stats.latestPledge && (
+                  <p className="leading-tight mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                    @{stats.latestPledge.gcUsername} just pledged {stats.latestPledge.title || 'a cache'} in {stats.latestPledge.state}.
+                  </p>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
                   {/* Total Pledged */}
