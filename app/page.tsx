@@ -370,7 +370,16 @@ export default function Home() {
                 <p className="leading-tight mt-1 mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Numbers update daily - check back to watch them change.</p>
 
                 {stats.latestPledge && (
-                  <div className="mb-8 text-center">
+                  <div className="mb-8 text-center flex flex-col items-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 mb-2">
+                      <Image
+                        src="/IRC Circle.PNG"
+                        alt="IRC26 Logo"
+                        width={80}
+                        height={80}
+                        className="object-contain"
+                      />
+                    </div>
                     <div className="font-lovely text-sm sm:text-base font-semibold tracking-wide text-black uppercase mb-2">
                       LATEST RAINMAKER
                     </div>
