@@ -45,15 +45,13 @@ export default function PublishingSchedule() {
           </p>
         </div>
 
-        {/* IRC26 Banner */}
+        {/* IRC26 Artwork */}
         <div className="mt-5">
           <p className="font-lovely text-xl sm:text-2xl leading-tight mb-1" style={{ color: '#69bc45' }}>
-            IRC26 BANNER:
+            IRC26 ARTWORK:
           </p>
           <p className="text-[14px] leading-6">
-            Include this code xxxxxxxx into the Souce Code at the end of your cache
-            description (just like how you would link Certitude). It will automatically
-            create the IRC26 banner and place your cache into the Leaderboard Game.
+            You can include this at the bottom of your cache page. <a href="/IRC26Banner.jpg" download className="text-[#69bc45] hover:underline">Download IRC26 Banner</a> | <a href="/IRC Circle.PNG" download className="text-[#69bc45] hover:underline">IRC26 Heart</a>
           </p>
         </div>
 
