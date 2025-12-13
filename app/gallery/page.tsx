@@ -63,7 +63,7 @@ export default function GalleryPage() {
               <div className="grid grid-cols-3 gap-3 sm:gap-4">
                 {images.map((img, index) => (
                   <div key={img.key || index} className="group relative overflow-hidden rounded-lg shadow-md">
-                    <div className="aspect-[4/3] relative">
+                    <div className="aspect-square relative">
                       <img
                         src={img.url}
                         alt={`${img.title || 'Cache'} by ${img.gcUsername}`}
