@@ -11,6 +11,9 @@ export async function GET() {
         },
       },
       select: {
+        id: true,
+        title: true,
+        gcUsername: true,
         images: true,
         createdAt: true,
       },
@@ -19,7 +22,14 @@ export async function GET() {
       },
     });
 
-    const allImages: { url: string; key: string; createdAt: Date }[] = [];
+    const allImages: { 
+      url: string; 
+      key: string; 
+      title: string | null;
+      gcUsername: string;
+      createdAt: Date;
+      source: string;
+    }[] = [];
 
     for (const pledge of pledges) {
       if (pledge.images && Array.isArray(pledge.images)) {
@@ -27,7 +37,10 @@ export async function GET() {
           allImages.push({
             url: img.url,
             key: img.key,
+            title: pledge.title,
+            gcUsername: pledge.gcUsername,
             createdAt: pledge.createdAt,
+            source: 'Pledge',
           });
         }
       }
@@ -36,8 +49,7 @@ export async function GET() {
     // Sort by createdAt descending and take the latest 9
     const latestImages = allImages
       .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
-      .slice(0, 9)
-      .map(({ url, key }) => ({ url, key }));
+      .slice(0, 9);
 
     return NextResponse.json({ images: latestImages });
   } catch (error) {

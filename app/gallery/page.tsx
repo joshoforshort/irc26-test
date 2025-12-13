@@ -6,6 +6,9 @@ import Image from 'next/image';
 interface GalleryImage {
   url: string;
   key: string;
+  title: string | null;
+  gcUsername: string;
+  source: string;
 }
 
 export default function GalleryPage() {
@@ -59,12 +62,20 @@ export default function GalleryPage() {
             ) : (
               <div className="grid grid-cols-3 gap-3 sm:gap-4">
                 {images.map((img, index) => (
-                  <div key={img.key || index} className="aspect-square relative rounded-lg overflow-hidden shadow-md">
-                    <img
-                      src={img.url}
-                      alt={`Gallery image ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
+                  <div key={img.key || index} className="group relative overflow-hidden rounded-lg shadow-md">
+                    <div className="aspect-[4/3] relative">
+                      <img
+                        src={img.url}
+                        alt={`${img.title || 'Cache'} by ${img.gcUsername}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-2 text-xs bg-black/60 text-white absolute bottom-0 left-0 right-0">
+                      <div className="font-semibold truncate">{img.title || 'Untitled'}</div>
+                      <div className="text-[11px] opacity-90 truncate">
+                        @{img.gcUsername} • {img.source}
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
