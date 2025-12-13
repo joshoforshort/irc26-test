@@ -370,9 +370,14 @@ export default function Home() {
                 <p className="leading-tight mt-1 mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Numbers update daily - check back to watch them change.</p>
 
                 {stats.latestPledge && (
-                  <p className="leading-tight mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
-                    @{stats.latestPledge.gcUsername} just pledged {stats.latestPledge.title || 'a cache'} in {stats.latestPledge.state}.
-                  </p>
+                  <div className="mb-8 text-center">
+                    <div className="font-lovely text-sm sm:text-base font-semibold tracking-wide text-black uppercase mb-2">
+                      LATEST RAINMAKER
+                    </div>
+                    <p className="leading-tight" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                      @{stats.latestPledge.gcUsername} just pledged {stats.latestPledge.title || 'a cache'} in {stats.latestPledge.state}.
+                    </p>
+                  </div>
                 )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
