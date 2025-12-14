@@ -63,7 +63,7 @@ export default function GalleryPage() {
                 No images uploaded yet. Be the first to share your cache ideas!
               </div>
             ) : (
-              <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                 {images.map((img, index) => (
                   <div key={img.key || index} className="group relative overflow-hidden rounded-lg shadow-md">
                     <div className="aspect-square relative">
