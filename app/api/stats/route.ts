@@ -8,7 +8,7 @@ export async function GET() {
       prisma.pledge.count(),
       prisma.submission.count(),
       prisma.pledge.findMany({
-        select: { gcUsername: true },
+        select: { gcUsername: true, approxState: true, cacheType: true },
       }),
       prisma.submission.findMany({
         select: { gcUsername: true, state: true, type: true },
@@ -25,14 +25,20 @@ export async function GET() {
     allSubmissions.forEach((s) => rainmakersSet.add(s.gcUsername));
     const rainmakers = rainmakersSet.size;
 
-    // Breakdown by state (from submissions only)
+    // Breakdown by state (from pledges and submissions)
     const byState: Record<string, number> = {};
+    allPledges.forEach((p) => {
+      byState[p.approxState] = (byState[p.approxState] || 0) + 1;
+    });
     allSubmissions.forEach((s) => {
       byState[s.state] = (byState[s.state] || 0) + 1;
     });
 
-    // Breakdown by type (from submissions only)
+    // Breakdown by type (from pledges and submissions)
     const byType: Record<string, number> = {};
+    allPledges.forEach((p) => {
+      byType[p.cacheType] = (byType[p.cacheType] || 0) + 1;
+    });
     allSubmissions.forEach((s) => {
       byType[s.type] = (byType[s.type] || 0) + 1;
     });
