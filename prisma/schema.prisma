@@ -163,14 +163,16 @@ model AdminUser {
 }
 
 model Post {
-  id          String     @id @default(cuid())
-  title       String
-  content     String     @db.Text
-  authorName  String
-  published   Boolean    @default(true)
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  likes       PostLike[]
+  id           String     @id @default(cuid())
+  title        String
+  content      String     @db.Text
+  authorName   String
+  imageUrl     String?
+  imageCaption String?
+  published    Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  likes        PostLike[]
 }
 
 model PostLike {

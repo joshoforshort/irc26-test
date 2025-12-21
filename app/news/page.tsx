@@ -8,6 +8,8 @@ interface Post {
   title: string;
   content: string;
   authorName: string;
+  imageUrl?: string;
+  imageCaption?: string;
   createdAt: string;
   _count: {
     likes: number;
@@ -184,6 +186,24 @@ export default function News() {
                     >
                       {post.content}
                     </div>
+                    {post.imageUrl && (
+                      <div className="mb-4 flex flex-col items-center">
+                        <img
+                          src={post.imageUrl}
+                          alt={post.imageCaption || 'Post image'}
+                          className="max-w-full w-auto h-auto rounded-lg shadow-md"
+                          style={{ maxWidth: '80%' }}
+                        />
+                        {post.imageCaption && (
+                          <p 
+                            className="mt-2 text-sm text-gray-500 text-center"
+                            style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
+                          >
+                            {post.imageCaption}
+                          </p>
+                        )}
+                      </div>
+                    )}
                     <div className="flex justify-center gap-2">
                       <LikeButton postId={post.id} initialCount={post._count.likes} />
                       <ShareButton postId={post.id} />
