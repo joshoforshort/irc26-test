@@ -89,6 +89,32 @@ function LikeButton({ postId, initialCount }: { postId: string; initialCount: nu
   );
 }
 
+function ShareButton({ postId }: { postId: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async () => {
+    const url = `${window.location.origin}/news#${postId}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error('Failed to copy:', error);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleShare}
+      className="flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 bg-gray-100 hover:bg-gray-200 text-gray-700"
+      style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
+      title="Copy link"
+    >
+      <span className="text-lg">{copied ? '✓' : '↗'}</span>
+    </button>
+  );
+}
+
 export default function News() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
@@ -153,8 +179,9 @@ export default function News() {
                     >
                       {post.content}
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center gap-2">
                       <LikeButton postId={post.id} initialCount={post._count.likes} />
+                      <ShareButton postId={post.id} />
                     </div>
                   </article>
                 ))}
