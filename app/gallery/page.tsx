@@ -14,6 +14,7 @@ interface GalleryImage {
 export default function GalleryPage() {
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
   useEffect(() => {
     fetch('/api/gallery')
@@ -65,7 +66,11 @@ export default function GalleryPage() {
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {images.map((img, index) => (
-                  <div key={img.key || index} className="group relative overflow-hidden rounded-lg shadow-md">
+                  <div 
+                    key={img.key || index} 
+                    className="group relative overflow-hidden rounded-lg shadow-md cursor-pointer"
+                    onClick={() => setSelectedImage(img)}
+                  >
                     <div className="aspect-square relative">
                       <img
                         src={img.url}
@@ -86,6 +91,35 @@ export default function GalleryPage() {
           </div>
         </section>
       </div>
+
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 transition-colors"
+            onClick={() => setSelectedImage(null)}
+          >
+            ×
+          </button>
+          <div className="max-w-4xl max-h-[90vh] relative" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedImage.url}
+              alt={`${selectedImage.title || 'Cache'} by ${selectedImage.gcUsername}`}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            />
+            <div className="mt-3 text-center text-white">
+              <div className="font-semibold text-lg" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                {selectedImage.title || 'Untitled'}
+              </div>
+              <div className="text-sm opacity-80" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                @{selectedImage.gcUsername} • {selectedImage.state}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
