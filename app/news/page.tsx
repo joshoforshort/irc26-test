@@ -141,7 +141,7 @@ export default function News() {
               <div className="space-y-8">
                 {posts.map((post) => (
                   <article key={post.id} className="border-b border-gray-200 pb-8 last:border-b-0 last:pb-0">
-                    <div className="text-sm text-gray-500 mb-2" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                    <div className="text-sm text-gray-500 mb-2 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                       {formatDate(post.createdAt)} • Posted by {post.authorName}
                     </div>
                     <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-3 text-center">
