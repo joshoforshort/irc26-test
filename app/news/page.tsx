@@ -106,10 +106,10 @@ function ShareButton({ postId }: { postId: string }) {
   return (
     <button
       onClick={handleShare}
-      className="flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 bg-gray-100 hover:bg-gray-200 text-gray-700"
+      className="flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 bg-gray-100 hover:bg-[#69bc45] hover:text-white text-gray-700"
       style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
     >
-      <span className="text-sm font-semibold">{copied ? 'copied!' : 'share the love'}</span>
+      <span className="text-sm font-semibold">{copied ? 'copied link!' : 'share the love'}</span>
       {!copied && (
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M15 5l5 5-5 5" />
