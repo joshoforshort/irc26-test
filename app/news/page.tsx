@@ -109,7 +109,7 @@ function ShareButton({ postId }: { postId: string }) {
       className="flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 bg-gray-100 hover:bg-gray-200 text-gray-700"
       style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
     >
-      <span className="text-sm font-semibold">{copied ? 'copied!' : 'copy link and share'}</span>
+      <span className="text-sm font-semibold">{copied ? 'copied!' : 'share the love'}</span>
     </button>
   );
 }
