@@ -22,7 +22,7 @@ interface Stats {
   } | null;
 }
 
-type DateFormat = 'DD MMMM YYYY' | 'D MMMM YYYY' | 'DDth MMMM YYYY' | 'DD MMM YYYY' | 'DDth MMM YYYY' | 'HH[AM/PM] [TZ]' | 'hA [AEST]' | 'HH[AM/PM] DD MMM YYYY' | 'hA DD MMM YYYY' | 'hA DDth MMM YYYY' | 'DDth MMM YYYY hA AEST' | 'DAYNAME';
+type DateFormat = 'DD MMMM YYYY' | 'D MMMM YYYY' | 'DDth MMMM YYYY' | 'DD MMM YYYY' | 'DDth MMM YYYY' | 'HH[AM/PM] [TZ]' | 'hA [AEDT]' | 'HH[AM/PM] DD MMM YYYY' | 'hA DD MMM YYYY' | 'hA DDth MMM YYYY' | 'DDth MMM YYYY hA AEDT' | 'DAYNAME';
 
 function ClientDate({ date, format }: { date: Date; format: DateFormat }) {
   const [mounted, setMounted] = useState(false);
@@ -136,7 +136,7 @@ export default function Home() {
               <ClientDate date={RAIN_START_DATE} format="DDth MMMM YYYY" />
             </h3>
             <p className="text-center font-lovely text-2xl sm:text-3xl leading-tight mb-8">
-              <ClientDate date={RAIN_START_DATE} format="hA [AEST]" />
+              <ClientDate date={RAIN_START_DATE} format="hA [AEDT]" />
             </p>
             <h2 className="text-center font-lovely text-2xl sm:text-3xl mb-6">
               RAIN DOWN LOVE
@@ -225,7 +225,7 @@ export default function Home() {
                 SUBMISSIONS CLOSE
               </h3>
               <p className="mt-2 mb-6 font-lovely text-lg sm:text-xl">
-                <ClientDate date={SUBMISSION_DEADLINE} format="DDth MMM YYYY hA AEST" />
+                <ClientDate date={SUBMISSION_DEADLINE} format="DDth MMM YYYY hA AEDT" />
               </p>
             </div>
           </div>

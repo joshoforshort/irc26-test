@@ -25,11 +25,11 @@ export function formatDate(
     | 'DD MMM YYYY'
     | 'DDth MMM YYYY'
     | 'HH[AM/PM] [TZ]'
-    | 'hA [AEST]'
+    | 'hA [AEDT]'
     | 'HH[AM/PM] DD MMM YYYY'
     | 'hA DD MMM YYYY'
     | 'hA DDth MMM YYYY'
-    | 'DDth MMM YYYY hA AEST'
+    | 'DDth MMM YYYY hA AEDT'
     | 'DAYNAME'
 ): string {
   const day = date.getDate();
@@ -57,17 +57,17 @@ export function formatDate(
     case 'DDth MMM YYYY':
       return `${day}${ordinalSuffix} ${monthShort} ${year}`;
     case 'HH[AM/PM] [TZ]':
-      return `${hours12}${ampmUpper} AEST`;
-    case 'hA [AEST]':
-      return `${hours12}${ampmUpper} AEST`;
+      return `${hours12}${ampmUpper} AEDT`;
+    case 'hA [AEDT]':
+      return `${hours12}${ampmUpper} AEDT`;
     case 'HH[AM/PM] DD MMM YYYY':
       return `${hours12}${ampmUpper} ${day} ${monthShort.toUpperCase()} ${year}`;
     case 'hA DD MMM YYYY':
       return `${hours12}${ampm} ${day} ${monthShort} ${year}`;
     case 'hA DDth MMM YYYY':
       return `${hours12}${ampm} ${day}${ordinalSuffix} ${monthShort} ${year}`;
-    case 'DDth MMM YYYY hA AEST':
-      return `${day}${ordinalSuffix} ${monthShort} ${year} ${hours12}${ampmUpper} AEST`;
+    case 'DDth MMM YYYY hA AEDT':
+      return `${day}${ordinalSuffix} ${monthShort} ${year} ${hours12}${ampmUpper} AEDT`;
     case 'DAYNAME':
       return dayName;
     default:
