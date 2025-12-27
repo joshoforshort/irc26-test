@@ -85,8 +85,31 @@ export async function GET() {
       }
     }
 
+    // Get pledge image URLs to filter out duplicates from submissions
+    const pledgeImageUrls = new Set<string>();
+    for (const pledge of pledges) {
+      if (pledge.images && Array.isArray(pledge.images)) {
+        for (const img of pledge.images as { url: string; key: string }[]) {
+          pledgeImageUrls.add(img.url);
+        }
+      }
+    }
+
+    // Filter out submission images that are duplicates of pledge images
+    const uniqueImages = allImages.filter((img, index) => {
+      // Keep all pledge images (they come first in the array)
+      const isPledgeImage = index < pledges.reduce((count, p) => {
+        return count + (p.images && Array.isArray(p.images) ? (p.images as any[]).length : 0);
+      }, 0);
+      
+      if (isPledgeImage) return true;
+      
+      // For submission images, only keep if URL is not already in pledges
+      return !pledgeImageUrls.has(img.url);
+    });
+
     // Sort by createdAt descending
-    const sortedImages = allImages
+    const sortedImages = uniqueImages
       .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 
     return NextResponse.json({ images: sortedImages });
