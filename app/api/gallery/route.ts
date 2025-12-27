@@ -7,24 +7,44 @@ export const revalidate = 0;
 
 export async function GET() {
   try {
-    const pledges = await prisma.pledge.findMany({
-      where: {
-        images: {
-          not: Prisma.DbNull,
+    const [pledges, submissions] = await Promise.all([
+      prisma.pledge.findMany({
+        where: {
+          images: {
+            not: Prisma.DbNull,
+          },
         },
-      },
-      select: {
-        id: true,
-        title: true,
-        gcUsername: true,
-        images: true,
-        createdAt: true,
-        approxState: true,
-      },
-      orderBy: {
-        createdAt: 'desc',
-      },
-    });
+        select: {
+          id: true,
+          title: true,
+          gcUsername: true,
+          images: true,
+          createdAt: true,
+          approxState: true,
+        },
+        orderBy: {
+          createdAt: 'desc',
+        },
+      }),
+      prisma.submission.findMany({
+        where: {
+          images: {
+            not: Prisma.DbNull,
+          },
+        },
+        select: {
+          id: true,
+          cacheName: true,
+          gcUsername: true,
+          images: true,
+          createdAt: true,
+          state: true,
+        },
+        orderBy: {
+          createdAt: 'desc',
+        },
+      }),
+    ]);
 
     const allImages: { 
       url: string; 
@@ -50,12 +70,26 @@ export async function GET() {
       }
     }
 
-    // Sort by createdAt descending and take the latest 9
-    const latestImages = allImages
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
-      .slice(0, 9);
+    for (const submission of submissions) {
+      if (submission.images && Array.isArray(submission.images)) {
+        for (const img of submission.images as { url: string; key: string }[]) {
+          allImages.push({
+            url: img.url,
+            key: img.key,
+            title: submission.cacheName,
+            gcUsername: submission.gcUsername,
+            createdAt: submission.createdAt,
+            state: submission.state,
+          });
+        }
+      }
+    }
 
-    return NextResponse.json({ images: latestImages });
+    // Sort by createdAt descending
+    const sortedImages = allImages
+      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+
+    return NextResponse.json({ images: sortedImages });
   } catch (error) {
     console.error('Error fetching gallery images:', error);
     return NextResponse.json({ images: [] });
