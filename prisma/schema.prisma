@@ -79,6 +79,7 @@ enum CacheType {
   LETTERBOX
   WHERIGO
   VIRTUAL
+  EARTHCACHE
 }
 
 enum CacheSize {

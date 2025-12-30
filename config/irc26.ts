@@ -46,6 +46,7 @@ export const CACHE_TYPES = [
   'LETTERBOX',
   'WHERIGO',
   'VIRTUAL',
+  'EARTHCACHE',
 ] as const;
 
 // Cache sizes (matching Prisma enum)
