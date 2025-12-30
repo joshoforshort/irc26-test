@@ -13,7 +13,7 @@ const imageSchema = z.object({
 export const pledgeSchema = z.object({
   gcUsername: z.string().min(1, 'Geocaching username is required').max(100),
   title: z.string().max(200).optional(),
-  cacheType: z.enum(['UNDECIDED', 'TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']),
+  cacheType: z.enum(['UNDECIDED', 'TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL', 'EARTHCACHE']),
   cacheSize: z.enum(['UNDECIDED', 'MICRO', 'SMALL', 'REGULAR', 'LARGE', 'OTHER']),
   approxSuburb: z.string().max(200).optional(),
   approxState: z.enum(['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA']),
@@ -34,7 +34,7 @@ export const submissionSchema = z.object({
   terrain: z.number().min(1.0).max(5.0).refine((val) => TERRAIN_RATINGS.includes(val as any), {
     message: 'Terrain must be in 0.5 increments from 1.0 to 5.0',
   }),
-  type: z.enum(['TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']),
+  type: z.enum(['UNDECIDED', 'TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL', 'EARTHCACHE']),
   hiddenDate: z.string().datetime().or(z.date()),
   notes: z.string().optional(),
   images: z.array(z.object({
@@ -48,7 +48,7 @@ export const submissionSchema = z.object({
 // Update pledge schema
 export const updatePledgeSchema = pledgeSchema.partial().extend({
   gcUsername: z.string().min(1).max(100).optional(),
-  cacheType: z.enum(['UNDECIDED', 'TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL']).optional(),
+  cacheType: z.enum(['UNDECIDED', 'TRADITIONAL', 'MULTI', 'MYSTERY', 'LETTERBOX', 'WHERIGO', 'VIRTUAL', 'EARTHCACHE']).optional(),
   cacheSize: z.enum(['UNDECIDED', 'MICRO', 'SMALL', 'REGULAR', 'LARGE', 'OTHER']).optional(),
   approxSuburb: z.string().min(1).max(200).optional(),
   approxState: z.enum(['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA']).optional(),
