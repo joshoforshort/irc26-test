@@ -138,12 +138,14 @@ export default function ConfirmPage() {
   };
 
   const cacheTypeLabels: Record<string, string> = {
+    UNDECIDED: 'Undecided',
     TRADITIONAL: 'Traditional',
     MULTI: 'Multi-cache',
     MYSTERY: 'Mystery',
     LETTERBOX: 'Letterbox',
     WHERIGO: 'Wherigo',
     VIRTUAL: 'Virtual',
+    EARTHCACHE: 'EarthCache',
   };
 
   const stateLabels: Record<string, string> = {

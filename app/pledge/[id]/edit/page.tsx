@@ -127,6 +127,7 @@ export default function EditPledgePage() {
     LETTERBOX: 'Letterbox',
     WHERIGO: 'Wherigo',
     VIRTUAL: 'Virtual',
+    EARTHCACHE: 'EarthCache',
   };
 
   const cacheSizeLabels: Record<string, string> = {
