@@ -34,13 +34,10 @@ export async function GET() {
       byState[p.approxState] = (byState[p.approxState] || 0) + 1;
     });
 
-    // Breakdown by type (from pledges and submissions)
+    // Breakdown by type (from pledges only)
     const byType: Record<string, number> = {};
     allPledges.forEach((p) => {
       byType[p.cacheType] = (byType[p.cacheType] || 0) + 1;
-    });
-    allSubmissions.forEach((s) => {
-      byType[s.type] = (byType[s.type] || 0) + 1;
     });
 
     return NextResponse.json({
