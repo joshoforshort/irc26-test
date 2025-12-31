@@ -28,13 +28,10 @@ export async function GET() {
     allSubmissions.forEach((s) => rainmakersSet.add(s.gcUsername));
     const rainmakers = rainmakersSet.size;
 
-    // Breakdown by state (from pledges and submissions)
+    // Breakdown by state (from pledges only)
     const byState: Record<string, number> = {};
     allPledges.forEach((p) => {
       byState[p.approxState] = (byState[p.approxState] || 0) + 1;
-    });
-    allSubmissions.forEach((s) => {
-      byState[s.state] = (byState[s.state] || 0) + 1;
     });
 
     // Breakdown by type (from pledges and submissions)
