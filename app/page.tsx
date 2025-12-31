@@ -367,7 +367,7 @@ export default function Home() {
                 <h2 className="text-center text-4xl md:text-5xl font-lovely mb-2 text-black">
                   OUR STATS
                 </h2>
-                <p className="leading-tight mt-1 mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Numbers update daily - check back to watch them change.</p>
+                <p className="leading-tight mt-1 mb-8 text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>Numbers update daily - check back to watch them grow!</p>
 
                 {stats.latestPledge && (
                   <div className="mb-8 text-center flex flex-col items-center">
