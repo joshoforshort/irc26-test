@@ -490,7 +490,7 @@ export default function Home() {
                         </p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-1 max-w-4xl mx-auto" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                           {stats.legendaryRainmakers.map((username) => (
-                            <p key={username} className="text-sm md:text-base text-black text-center">
+                            <p key={username} className="text-sm md:text-base text-black text-left">
                               • {username}
                             </p>
                           ))}
