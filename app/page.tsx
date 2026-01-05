@@ -488,14 +488,12 @@ export default function Home() {
                         <p className="text-center text-sm md:text-base text-black mb-4" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                           Here are the COs who are creating hides for IRC26
                         </p>
-                        <div className="text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
-                          <p className="text-sm md:text-base text-black leading-relaxed">
-                            {stats.legendaryRainmakers.map((username, index) => (
-                              <span key={username}>
-                                {username}{index < stats.legendaryRainmakers.length - 1 ? ' • ' : ''}
-                              </span>
-                            ))}
-                          </p>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-1 max-w-4xl mx-auto" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                          {stats.legendaryRainmakers.map((username) => (
+                            <p key={username} className="text-sm md:text-base text-black text-center">
+                              • {username}
+                            </p>
+                          ))}
                         </div>
                       </div>
                     )}
