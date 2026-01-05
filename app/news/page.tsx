@@ -180,29 +180,64 @@ export default function News() {
                     <h2 className="font-lovely text-xl sm:text-2xl leading-tight tracking-wide mb-3 text-center">
                       {post.title}
                     </h2>
-                    <div 
-                      className="leading-relaxed text-center mb-4 whitespace-pre-wrap" 
-                      style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
-                    >
-                      {post.content}
-                    </div>
-                    {post.imageUrl && (
-                      <div className="mb-4 flex flex-col items-center">
-                        <img
-                          src={post.imageUrl}
-                          alt={post.imageCaption || 'Post image'}
-                          className="max-w-full w-auto h-auto rounded-lg shadow-md"
-                          style={{ maxWidth: '80%' }}
-                        />
-                        {post.imageCaption && (
-                          <p 
-                            className="mt-2 text-sm text-gray-500 text-center"
-                            style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
-                          >
-                            {post.imageCaption}
-                          </p>
+                    {post.content.includes('[IMAGE]') && post.imageUrl ? (
+                      <>
+                        <div 
+                          className="leading-relaxed text-center mb-4 whitespace-pre-wrap" 
+                          style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
+                        >
+                          {post.content.split('[IMAGE]')[0]}
+                        </div>
+                        <div className="mb-4 flex flex-col items-center">
+                          <img
+                            src={post.imageUrl}
+                            alt={post.imageCaption || 'Post image'}
+                            className="max-w-full w-auto h-auto rounded-lg shadow-md"
+                            style={{ maxWidth: '80%' }}
+                          />
+                          {post.imageCaption && (
+                            <p 
+                              className="mt-2 text-sm text-gray-500 text-center"
+                              style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
+                            >
+                              {post.imageCaption}
+                            </p>
+                          )}
+                        </div>
+                        <div 
+                          className="leading-relaxed text-center mb-4 whitespace-pre-wrap" 
+                          style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
+                        >
+                          {post.content.split('[IMAGE]')[1]}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div 
+                          className="leading-relaxed text-center mb-4 whitespace-pre-wrap" 
+                          style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
+                        >
+                          {post.content}
+                        </div>
+                        {post.imageUrl && (
+                          <div className="mb-4 flex flex-col items-center">
+                            <img
+                              src={post.imageUrl}
+                              alt={post.imageCaption || 'Post image'}
+                              className="max-w-full w-auto h-auto rounded-lg shadow-md"
+                              style={{ maxWidth: '80%' }}
+                            />
+                            {post.imageCaption && (
+                              <p 
+                                className="mt-2 text-sm text-gray-500 text-center"
+                                style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
+                              >
+                                {post.imageCaption}
+                              </p>
+                            )}
+                          </div>
                         )}
-                      </div>
+                      </>
                     )}
                     <div className="flex justify-center gap-2">
                       <LikeButton postId={post.id} initialCount={post._count.likes} />
