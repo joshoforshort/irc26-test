@@ -489,7 +489,7 @@ export default function Home() {
                           <p className="text-sm md:text-base text-black leading-relaxed">
                             {stats.legendaryRainmakers.map((username, index) => (
                               <span key={username}>
-                                @{username}{index < stats.legendaryRainmakers.length - 1 ? ' • ' : ''}
+                                {username}{index < stats.legendaryRainmakers.length - 1 ? ' • ' : ''}
                               </span>
                             ))}
                           </p>
