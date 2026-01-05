@@ -479,12 +479,15 @@ export default function Home() {
                       )}
                     </div>
 
-                    {/* Legendary CO Rainmakers */}
+                    {/* Legendary Rainmakers */}
                     {stats.legendaryRainmakers && stats.legendaryRainmakers.length > 0 && (
                       <div className="mt-10">
-                        <h3 className="text-xl font-lovely text-center mb-4 text-black">
-                          LEGENDARY CO RAINMAKERS
+                        <h3 className="text-xl font-lovely text-center mb-2 text-black">
+                          LEGENDARY RAINMAKERS
                         </h3>
+                        <p className="text-center text-sm md:text-base text-black mb-4" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                          Here are the COs who are creating hides for IRC26
+                        </p>
                         <div className="text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
                           <p className="text-sm md:text-base text-black leading-relaxed">
                             {stats.legendaryRainmakers.map((username, index) => (
