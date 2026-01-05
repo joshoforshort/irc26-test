@@ -13,6 +13,7 @@ interface Stats {
   totalPledged: number;
   totalSubmissions: number;
   rainmakers: number;
+  legendaryRainmakers: string[];
   byState: Record<string, number>;
   byType: Record<string, number>;
   latestPledge: {
@@ -81,6 +82,7 @@ interface Stats {
   totalPledged: number;
   totalSubmissions: number;
   rainmakers: number;
+  legendaryRainmakers: string[];
   byState: Record<string, number>;
   byType: Record<string, number>;
   latestPledge: {
@@ -476,6 +478,24 @@ export default function Home() {
                         </div>
                       )}
                     </div>
+
+                    {/* Legendary CO Rainmakers */}
+                    {stats.legendaryRainmakers && stats.legendaryRainmakers.length > 0 && (
+                      <div className="mt-10">
+                        <h3 className="text-xl font-lovely text-center mb-4 text-black">
+                          LEGENDARY CO RAINMAKERS
+                        </h3>
+                        <div className="text-center" style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}>
+                          <p className="text-sm md:text-base text-black leading-relaxed">
+                            {stats.legendaryRainmakers.map((username, index) => (
+                              <span key={username}>
+                                @{username}{index < stats.legendaryRainmakers.length - 1 ? ' • ' : ''}
+                              </span>
+                            ))}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

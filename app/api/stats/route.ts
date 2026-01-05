@@ -28,6 +28,11 @@ export async function GET() {
     allSubmissions.forEach((s) => rainmakersSet.add(s.gcUsername));
     const rainmakers = rainmakersSet.size;
 
+    // Get 25 random unique GC usernames for legendary rainmakers display
+    const allUsernames = Array.from(rainmakersSet);
+    const shuffled = allUsernames.sort(() => Math.random() - 0.5);
+    const legendaryRainmakers = shuffled.slice(0, 25);
+
     // Breakdown by state (from pledges only)
     const byState: Record<string, number> = {};
     allPledges.forEach((p) => {
@@ -44,6 +49,7 @@ export async function GET() {
       totalPledged,
       totalSubmissions,
       rainmakers,
+      legendaryRainmakers,
       byState,
       byType,
       latestPledge: latestPledge ? {
