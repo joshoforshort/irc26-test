@@ -35,6 +35,28 @@ function formatDate(dateString: string): string {
   });
 }
 
+function renderContentWithLinks(content: string) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = content.split(urlRegex);
+  
+  return parts.map((part, index) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a 
+          key={index} 
+          href={part} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-[#69bc45] hover:underline break-all"
+        >
+          {part}
+        </a>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+}
+
 function LikeButton({ postId, initialCount }: { postId: string; initialCount: number }) {
   const [liked, setLiked] = useState(false);
   const [count, setCount] = useState(initialCount);
@@ -186,7 +208,7 @@ export default function News() {
                           className="leading-relaxed text-center mb-4 whitespace-pre-wrap" 
                           style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
                         >
-                          {post.content.split('[IMAGE]')[0]}
+                          {renderContentWithLinks(post.content.split('[IMAGE]')[0])}
                         </div>
                         <div className="mb-4 flex flex-col items-center">
                           <img
@@ -208,7 +230,7 @@ export default function News() {
                           className="leading-relaxed text-center mb-4 whitespace-pre-wrap" 
                           style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
                         >
-                          {post.content.split('[IMAGE]')[1]}
+                          {renderContentWithLinks(post.content.split('[IMAGE]')[1])}
                         </div>
                       </>
                     ) : (
@@ -217,7 +239,7 @@ export default function News() {
                           className="leading-relaxed text-center mb-4 whitespace-pre-wrap" 
                           style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
                         >
-                          {post.content}
+                          {renderContentWithLinks(post.content)}
                         </div>
                         {post.imageUrl && (
                           <div className="mb-4 flex flex-col items-center">
