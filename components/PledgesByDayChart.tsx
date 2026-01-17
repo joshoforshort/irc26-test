@@ -50,11 +50,11 @@ export default function PledgesByDayChart() {
         PLEDGES RECEIVED BY WEEK
       </h3>
       <div className="bg-white/80 rounded-2xl px-6 py-5 shadow-sm max-w-4xl mx-auto">
-        <div className="flex items-end justify-center gap-3 sm:gap-4 h-56 overflow-x-auto pb-2">
+        <div className="flex items-end justify-center gap-3 sm:gap-4 overflow-x-auto pb-2" style={{ height: '220px' }}>
           {data.map((week) => {
-            const heightPercent = maxCount > 0 ? (week.count / maxCount) * 100 : 0;
+            const barHeight = maxCount > 0 ? (week.count / maxCount) * 150 : 0;
             return (
-              <div key={week.weekStart} className="flex flex-col items-center min-w-[60px] sm:min-w-[80px]">
+              <div key={week.weekStart} className="flex flex-col items-center min-w-[60px] sm:min-w-[80px]" style={{ height: '100%', justifyContent: 'flex-end' }}>
                 <div
                   className="text-sm font-bold text-black mb-1"
                   style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
@@ -64,9 +64,8 @@ export default function PledgesByDayChart() {
                 <div
                   className="w-12 sm:w-16 rounded-t transition-all duration-300"
                   style={{
-                    height: `${Math.max(heightPercent, 8)}%`,
+                    height: `${Math.max(barHeight, 10)}px`,
                     backgroundColor: '#69bc45',
-                    minHeight: '20px',
                   }}
                 />
                 <div
