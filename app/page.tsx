@@ -8,6 +8,7 @@ import { formatDate } from '@/lib/date-utils';
 import Card from '@/components/Card';
 import CTAButton from '@/components/CTAButton';
 import CountdownTimer from '@/components/CountdownTimer';
+import PledgesByDayChart from '@/components/PledgesByDayChart';
 
 interface Stats {
   totalPledged: number;
@@ -497,6 +498,9 @@ export default function Home() {
                         </div>
                       </div>
                     )}
+
+                    {/* Pledges By Day Chart */}
+                    <PledgesByDayChart />
                   </div>
                 )}
               </div>
