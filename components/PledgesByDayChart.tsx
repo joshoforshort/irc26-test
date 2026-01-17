@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react';
 
-interface DayData {
-  date: string;
+interface WeekData {
+  weekStart: string;
+  weekEnd: string;
   count: number;
 }
 
 export default function PledgesByDayChart() {
-  const [data, setData] = useState<DayData[]>([]);
+  const [data, setData] = useState<WeekData[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function PledgesByDayChart() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Error fetching pledges by day:', err);
+        console.error('Error fetching pledges by week:', err);
         setLoading(false);
       });
   }, []);
@@ -46,32 +47,37 @@ export default function PledgesByDayChart() {
   return (
     <div className="mt-10">
       <h3 className="text-xl font-lovely text-center mb-4 text-black">
-        PLEDGES RECEIVED BY DAY
+        PLEDGES RECEIVED BY WEEK
       </h3>
       <div className="bg-white/80 rounded-2xl px-6 py-5 shadow-sm max-w-4xl mx-auto">
-        <div className="flex items-end justify-center gap-1 sm:gap-2 h-48 overflow-x-auto">
-          {data.map((day) => {
-            const heightPercent = maxCount > 0 ? (day.count / maxCount) * 100 : 0;
+        <div className="flex items-end justify-center gap-3 sm:gap-4 h-56 overflow-x-auto pb-2">
+          {data.map((week) => {
+            const heightPercent = maxCount > 0 ? (week.count / maxCount) * 100 : 0;
             return (
-              <div key={day.date} className="flex flex-col items-center min-w-[30px] sm:min-w-[40px]">
+              <div key={week.weekStart} className="flex flex-col items-center min-w-[60px] sm:min-w-[80px]">
                 <div
-                  className="text-xs font-bold text-black mb-1"
+                  className="text-sm font-bold text-black mb-1"
                   style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
                 >
-                  {day.count}
+                  {week.count}
                 </div>
                 <div
-                  className="w-6 sm:w-8 rounded-t transition-all duration-300"
+                  className="w-12 sm:w-16 rounded-t transition-all duration-300"
                   style={{
-                    height: `${Math.max(heightPercent, 5)}%`,
+                    height: `${Math.max(heightPercent, 8)}%`,
                     backgroundColor: '#69bc45',
+                    minHeight: '20px',
                   }}
                 />
                 <div
-                  className="text-[10px] sm:text-xs text-black mt-1 whitespace-nowrap"
+                  className="text-[9px] sm:text-[11px] text-black mt-2 text-center leading-tight"
                   style={{ fontFamily: '"Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif' }}
                 >
-                  {formatDateLabel(day.date)}
+                  {formatDateLabel(week.weekStart)}
+                  <br />
+                  <span className="text-gray-500">to</span>
+                  <br />
+                  {formatDateLabel(week.weekEnd)}
                 </div>
               </div>
             );
