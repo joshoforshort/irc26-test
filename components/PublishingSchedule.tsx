@@ -85,7 +85,7 @@ export default function PublishingSchedule() {
         {/* Submissions close */}
         <div className="mt-6 text-center">
           <p className="font-lovely text-2xl sm:text-3xl">
-            SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
+            SUBMISSIONS CLOSE: 31 JAN 2026 6PM AEDT
           </p>
         </div>
       </div>

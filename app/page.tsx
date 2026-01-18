@@ -309,7 +309,7 @@ export default function Home() {
                       </p>
                       <br />
                       <p className="font-lovely text-xs sm:text-sm mt-3">
-                        SUBMISSIONS CLOSE: 31 JAN 2026 AT 6PM
+                        SUBMISSIONS CLOSE: 31 JAN 2026 6PM AEDT
                       </p>
                     </div>
 
