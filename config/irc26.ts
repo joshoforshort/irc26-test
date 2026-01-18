@@ -33,8 +33,8 @@ const minusDays = (iso: string, days: number) => {
 
 /** Derived constants (do NOT hardcode) */
 export const RAIN_START_DATE = toDate(RAIN_START_ISO);
-/** Exactly two weeks before the event, same local time */
-export const SUBMISSION_DEADLINE_ISO = minusDays(RAIN_START_ISO, 14);
+/** Submission deadline: 31 Jan 2026 at 6PM AEDT */
+export const SUBMISSION_DEADLINE_ISO = '2026-01-31T18:00:00+11:00';
 export const SUBMISSION_DEADLINE = toDate(SUBMISSION_DEADLINE_ISO);
 
 // Cache types (matching Prisma enum)
